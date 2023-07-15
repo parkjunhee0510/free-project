@@ -1,0 +1,304 @@
+
+.btn {
+  margin-top: -65px;
+  margin-bottom: 5px;
+  margin-left: 96%;
+  padding: 3px;
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  float: left;
+  cursor: pointer;
+}
+
+.btn a {
+  color: black;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background-color: burlywood;
+}
+
+/* .btn:focus {
+  background-color: gray;
+} */
+
+.btn:active {
+  background-color: chocolate;
+}
+
+.header-box {
+  margin-top: 30px;
+  width: 100%;
+  background-color: white;
+  border: 2px solid gray;
+  border-radius: 5px;
+  /* background-image: url(../layout.png); */
+  padding: 1px;
+  text-align: center;
+}
+
+.header-box h3 {
+  margin-top: 20px;
+  margin-bottom: -13px;
+  margin-left: 30px;
+  font-size: 40px;
+  color: rgb(63, 28, 28);
+}
+
+.header-box p {
+  margin-left: 30px;
+  font-size: 17px;
+  color: rgb(65, 54, 54);
+}
+
+.header-box span {
+  display: inline-block;
+  width: 160px;
+  color: white;
+  background-color: black;
+  font-family: fantasy;
+}
+
+#navbar {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 55px;
+}
+
+#navbar ul {
+  display: flex;
+  margin-left: -40px;
+  width: 100%;
+  height: 100%;
+}
+
+#navbar ul li {
+  border-left: 1px solid rgb(5, 5, 5);
+  width: 100%;
+  line-height: 50px;
+  color: white;
+  background-color: rgba(2, 2, 0, 0.705);
+  text-align: center;
+}
+
+#navbar .menuLink {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  display: block;
+  width: 100%;
+  height: 100%;
+  font-size: 14px;
+  font-weight: bold;
+  font-family: "Trebuchet MS";
+}
+
+#navbar ul :hover {
+  background-color: gray;
+  color: black;
+}
+
+li {
+  list-style: none;
+}
+
+/* 배너 코드 */
+.banner-container {
+  width: 100vw;
+  height: 400px;
+  overflow: hidden;
+  position: relative;
+  top: 0;
+}
+.banner {
+  width: calc(100vw * 4);
+  height: 100%;
+  display: flex;
+  animation: animation1 10s infinite;
+  -webkit-transition: all 0.5s cubic-bezier(1, 0.01, 0.32, 1);
+  -moz-transition: all 0.5s cubic-bezier(1, 0.01, 0.32, 1);
+  -o-transition: all 0.5s cubic-bezier(1, 0.01, 0.32, 1);
+  -ms-transition: all 0.5s cubic-bezier(1, 0.01, 0.32, 1);
+  transition: all 0.5s cubic-bezier(1, 0.01, 0.32, 1);
+}
+.banner > div {
+  width: 100vw;
+  height: 100%;
+}
+.banner > div:nth-child(1) {
+  background-color: #2e4559;
+}
+.banner > div:nth-child(2) {
+  background-color: #4a6d8c;
+}
+.banner > div:nth-child(3) {
+  background-color: #6a8aa6;
+}
+.banner > div:nth-child(4) {
+  background-color: #a9c6d9;
+}
+
+@keyframes animation1 {
+  0% {
+    margin-left: 0;
+  }
+  20% {
+    margin-left: 0;
+  }
+  25% {
+    margin-left: -100%;
+  }
+  45% {
+    margin-left: -100%;
+  }
+  50% {
+    margin-left: -200%;
+  }
+  70% {
+    margin-left: -200%;
+  }
+  75% {
+    margin-left: -300%;
+  }
+  95% {
+    margin-left: -300%;
+  }
+  100% {
+    margin-left: 0;
+  }
+}
+@keyframes animation2 {
+  0% {
+    margin-left: -100%;
+  }
+  20% {
+    margin-left: -100%;
+  }
+  25% {
+    margin-left: -200%;
+  }
+  45% {
+    margin-left: -200%;
+  }
+  50% {
+    margin-left: -300%;
+  }
+  70% {
+    margin-left: -300%;
+  }
+  75% {
+    margin-left: 0;
+  }
+  95% {
+    margin-left: 0;
+  }
+  100% {
+    margin-left: -100%;
+  }
+}
+@keyframes animation3 {
+  0% {
+    margin-left: -200%;
+  }
+  20% {
+    margin-left: -200%;
+  }
+  25% {
+    margin-left: -300%;
+  }
+  45% {
+    margin-left: -300%;
+  }
+  50% {
+    margin-left: 0;
+  }
+  70% {
+    margin-left: 0;
+  }
+  75% {
+    margin-left: -100%;
+  }
+  95% {
+    margin-left: -100%;
+  }
+  100% {
+    margin-left: -200%;
+  }
+}
+@keyframes animation4 {
+  0% {
+    margin-left: -300%;
+  }
+  20% {
+    margin-left: -300%;
+  }
+  25% {
+    margin-left: 0;
+  }
+  45% {
+    margin-left: 0;
+  }
+  50% {
+    margin-left: -100%;
+  }
+  70% {
+    margin-left: -100%;
+  }
+  75% {
+    margin-left: -200%;
+  }
+  95% {
+    margin-left: -200%;
+  }
+  100% {
+    margin-left: -300%;
+  }
+}
+
+/* 배너 코드 */
+
+/* 중간 배너 */
+
+#middle-banner-container {
+  width: 100%;
+  height: 650px;
+  background-color: white;
+  object-fit: cover;
+}
+
+.middle-item-container-right {
+  width: 50%;
+  height: 450px;
+  background-color: #a9c6d9;
+  float: right;
+}
+
+figure {
+  width: 100%;
+  height: 550px;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  overflow: hidden;
+  object-fit: cover;
+}
+
+
+.middle-item-img-a figure img {
+  object-fit: cover;
+  width: 100%;
+  filter: grayscale(0) blur(0);
+  filter: grayscale(0) blur(0);
+  transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+}
+.middle-item-img-a figure:hover img {
+  filter: grayscale(100%) blur(3px);
+  filter: grayscale(100%) blur(3px);
+}
+
+/* 중간 배너 */
