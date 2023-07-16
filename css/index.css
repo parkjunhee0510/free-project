@@ -1,0 +1,50 @@
+table.type {
+  border-collapse: collapse;
+  text-align: left;
+  line-height: 1.5;
+}
+
+table.type thead th {
+  padding: 10px;
+  font-weight: bold;
+  vertical-align: top;
+  color: #369;
+  border-bottom: 3px solid #036;
+}
+
+table.type tbody th {
+  width: 150px;
+  padding: 10px;
+  font-weight: bold;
+  vertical-align: top;
+  border-bottom: 1px solid #ccc;
+  background: #f3f6f7;
+}
+
+table.type td {
+  width: 350px;
+  padding: 10px;
+  vertical-align: top;
+  border-bottom: 1px solid #ccc;
+}
+
+.logobox {
+  width: 100%;
+  height: 95px;
+  border: 1px solid black;
+}
+.logo-img {
+  margin-top: 1px;
+  margin-left: 7px;
+  max-width: 100%;
+  height: 90px;
+  display: block;
+  background-image: url(../test1.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.navbar {
+  width: 100%;
+  height: 70px;
+}
