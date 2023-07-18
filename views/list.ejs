@@ -10,18 +10,26 @@
       integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
       crossorigin="anonymous">
       <link rel="stylesheet" type="text/css" href="/style/main.css">
+      <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     </head>
     <body>
+      <div id="hader-navbar-container">
+        <ul>
+          <li><a href="/">home</a></li>
+          <li><a href="/login">로그인</a></li>
+          <li><a href="/signup">회원가입</a></li>
+          <li><a href="/mypage">내 정보</a></li>
+        </ul>
+      </div>
       <div class="header-box">
           <h3><span>ALCOHOL</span> FREE</h3>
-          <p></p>
-          <button class="navbtn">Login</a></button> 
-          <p>시발</p>
+          <p></p> 
+          <p>test</p>
         </div>
         <hr />
         <nav id="navbar">
           <ul>
-            <li><a class="menuLink" href="/list">글 목록</a></li>
+            <li><a class="menuLink" href="/list">게시판</a></li>
             <li><a class="menuLink" href="#">메뉴2</a></li>
             <li><a class="menuLink" href="#">메뉴3</a></li>
             <li><a class="menuLink" href="#">메뉴4</a></li>
@@ -32,47 +40,26 @@
     <h4 class="m1-2 my-3">게시판</h4>
 
     <div class="container input-group mb-2">
-      <form action="/search" method="POST">
-        <input class="form-control" name="search" >
-      </form>
-      <button class="input-group-append btn btn-danger">검색</button>
+      <input class="form-control" id="search-input">
+      <button class="input-group-append btn btn-danger" id="search">검색</button>
     </div>
     
     <ul class="list-group">
       <% for (var i = 0; i < posts.length; i++){ %>
       <li class="list-group-item">
         <p>글 번호 : <%= posts[i]._id %></p>
-        <h4>할일 제목 : ? <%= posts[i].제목 %></h4>
+        <h4><a href="/detail/<%= posts[i]._id%>"><%= posts[i].제목 %></a></h4>
         <p>할일 마감 날짜 : <%= posts[i].내용 %></p>
-        <button class="delete btn btn-danger" data-id="<%= posts[i]._id%>">삭제</button>
+        <button class="delete  btn btn-danger" data-id="<%= posts[i]._id%>">삭제</button>
+        <button class="edit  btn btn-danger""><a href="/edit/<%= posts[i]._id%>">수정</a></button>
       </li>
       <% } %>
     </ul>
-
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="/public/js/list.js"></script>
+  
 
     <!-- ajax 를 활용한 서버에 삭제 요청 보내기 -->
-    <script>
-
-      $(".delete").click((e) => {
-        
-
-        var w = e.target.dataset.id; //button의 데이터 값을받아 넘겨주는 함수.
-        $.ajax({
-          method: "DELETE",
-          url: "/delete",
-          data: {_id:e.target.dataset.id},
-        }).done((결과) => {
-          console.log("삭제완료");
-          $(e.target).parents('li').fadeOut(); //버튼 클릭시 버튼의 부모객체 li가 사라지는 함수
-        }).fail(() => {
-
-        });
-      });
-
-
-
-    </script>
+    
 
   </body>
 </html>
