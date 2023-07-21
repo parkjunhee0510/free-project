@@ -1,0 +1,6 @@
+.myborder {
+  width: 80%;
+  height: 500px;
+  background-color: aquamarine;
+  border: 1px solid black;
+}

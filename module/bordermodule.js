@@ -1,3 +1,4 @@
+const { param } = require("../routes/contents");
 var config = require("./config");
 const MongoClient = require("mongodb").MongoClient;
 
@@ -13,6 +14,31 @@ exports.listRead = (요청, 응답) => {
     });
 };
 
+//페이징 api 테스트
+exports.pagetest = async (req, res, next) => {
+  const page = req.query.page || 1;
+  var skipSet = 1;
+  var offset = 5;
+  var setting = 0;
+  db.collection("post")
+    .find()
+    .limit(offset)
+    .skip(setting * offset)
+    .toArray((error, result) => {
+      try {
+        if (result) {
+          console.log(result);
+          res.render("page.ejs", {
+            posts: result,
+            offset: offset,
+            skipSet: skipSet - 1,
+          });
+          setting++;
+        }
+      } catch (error) {}
+    });
+};
+
 //삭제
 exports.delete = (req, res) => {
   console.log(req.body._id);
@@ -24,9 +50,6 @@ exports.delete = (req, res) => {
 
   //db id데이터 값을 찾아 삭제
   db.collection("post").deleteOne(deleteData, (error, result) => {
-    if (result) {
-      console.log(result);
-    }
     console.log("삭제완료");
 
     //res.status (200) 는 성공적으로 실행했다는 신호 200은 성공 400은 에러코드

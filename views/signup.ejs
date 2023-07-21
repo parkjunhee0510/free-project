@@ -26,13 +26,35 @@
     </div>
 
     <div>
+      <form action="/mail" method="POST">
+        <input
+          type="email"
+          name="email"
+          id="UserEmail"
+          placeholder="이메일을 입력해주세요"
+        />
+        <button>확인</button>
+      </form>
       <form action="/register" method="POST" id="login_form">
         <div>AF 회원가입</div>
         <input type="text" placeholder="이름" class="in" name="name" />
-        <input type="text" placeholder="아이디" id="userID" class="in" name="id" />
+        <input
+          type="text"
+          placeholder="8자 ~ 15로 영어및 숫자를 섞어 입력해주세요"
+          id="userID"
+          class="in"
+          name="id"
+        />
+        <button type="button" class="id-overhelp-button" onclick="checkId()">
+          ID 중복검사
         </button>
-        <p class="id_check_sucess" style="display: none">중복검사 완료</p>
-        <input type="password" placeholder="비밀번호" id="userPW1"  class="in" name="pw" />
+        <input
+          type="password"
+          placeholder="비밀번호"
+          id="userPW1"
+          class="in"
+          name="pw"
+        />
         <input
           type="password"
           placeholder="비밀번호를 한번 더 입력해 주세요"
@@ -43,10 +65,14 @@
         <button
           type="button"
           class="pw-overhelp-button"
-          id="login_submit">
-          중복검사
-          </button>
-        <button type="submit" id="btn" value="확인">확인</button>
+          id="login_submit"
+          onclick="checkPw()"
+        >
+          비밀번호 중복검사
+        </button>
+        <button type="submit" class="sign-btn" id="btn" value="확인">
+          확인
+        </button>
       </form>
     </div>
 

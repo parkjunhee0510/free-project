@@ -3,6 +3,7 @@ const MongoClient = require("mongodb").MongoClient;
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
 const session = require("express-session");
+const bcrypt = require("bcrypt");
 
 const connect = require("./db_conn.js");
 

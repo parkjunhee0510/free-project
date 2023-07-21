@@ -139,3 +139,11 @@ a:hover {
 #btn:hover {
   background-color: coral;
 }
+
+.sign-btn {
+  display: none;
+}
+
+#login_submit {
+  display: none;
+}

@@ -24,3 +24,11 @@ $(".edit").click((e) => {
     date: { _id: e.target.dataset.id },
   });
 });
+
+$(".list").click((e) => {
+  $.ajax({
+    method: "POST",
+    url: "/page:page",
+    date: { page: e.target.dataset.page },
+  });
+});

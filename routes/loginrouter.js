@@ -13,6 +13,9 @@ router.post(
   }),
   (req, res) => {
     //인증 성공시 home으로 이동
+
+    //쿠키생성
+    res.cookie("user", { userid: req.body.id });
     res.redirect("/");
   }
 );
@@ -20,8 +23,8 @@ router.post(
 //로그아웃
 router.get("/logout", (req, res, next) => {
   req.session.destroy();
-  res.clearCookie("sid");
-
+  //쿠키 삭제
+  res.cookie("user", "", { maxAge: 0 });
   res.redirect("/");
 });
 
@@ -73,6 +76,10 @@ passport.deserializeUser((id, done) => {
   db.collection("login").findOne({ id: id }, (error, result) => {
     done(null, result);
   });
+});
+
+router.get("/file", (req, res) => {
+  res.redirect("/login");
 });
 
 //

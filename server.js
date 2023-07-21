@@ -7,10 +7,12 @@ const methodOverride = require("method-override");
 app.use(methodOverride("_method"));
 require("dotenv").config();
 const bcrypt = require("bcrypt");
+const cookieParser = require("cookie-parser");
 
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
 const session = require("express-session");
+app.use(cookieParser());
 
 app.use(
   session({
@@ -33,10 +35,10 @@ app.use(
 app.set("view engine", "ejs");
 //nodejs 사용시 html 에서 외부 css 파일을 불러올 경우 에러가 떠 css 시트가 적용이 안됨 아래와 같은 코드로 public 정의 해줌
 app.use(express.static(path.join(__dirname, "public")));
-//라우팅 파일
+
+//모듈 파일
 const borderapi = require("./module/bordermodule.js");
 const loginapi = require("./module/signupmd.js");
-//모듈 파일
 const connect = require("./module/db_conn.js");
 
 app.use(bodyParser.urlencoded({ extends: true }));
@@ -53,6 +55,9 @@ app.use("/write", require("./routes/homepage.js"));
 
 //읽기 api
 app.get("/list", borderapi.listRead);
+
+//페이징 test api
+app.get("/page/:page", borderapi.pagetest);
 
 //검색 api
 app.get("/search", borderapi.search);
@@ -71,14 +76,17 @@ app.put("/edit", borderapi.editUpdate);
 //로그인
 app.use("/login", require("./routes/homepage.js"));
 
+//로그인 api
+app.post("/login", require("./routes/loginrouter.js"));
+
+//로그인 실패
+app.get("/file", require("./routes/loginrouter.js"));
+
 //회원가입
 app.use("/signup", pageLogin, require("./routes/homepage.js"));
 
 //회원가입 api
 app.post("/register", loginapi.signup);
-
-//로그인 api
-app.post("/login", require("./routes/loginrouter.js"));
 
 //로그아웃
 app.get("/logout", require("./routes/loginrouter.js"));
@@ -101,3 +109,4 @@ app.use(require("./routes/loginrouter.js"));
 //글 작성 api
 app.post("/add", borderapi.post);
 //
+app.post("/mail", require("./routes/auth.js"));

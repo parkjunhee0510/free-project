@@ -1,8 +1,14 @@
 const express = require("express");
+
 var router = require("express").Router();
 
 router.get("/", (req, res) => {
-  res.render("main.ejs");
+  if (req.cookies) {
+    console.log(req.cookies);
+    return res.render("main.ejs", { usercookie: req.cookies });
+  } else {
+    res.render("main.ejs");
+  }
 });
 
 router.get("/write", (req, res) => {
@@ -15,13 +21,6 @@ router.get("/login", (req, res) => {
 
 router.get("/signup", (req, res) => {
   res.render("signup.ejs");
-});
-
-router.get("/logout", (req, res, next) => {
-  req.session.destroy();
-  res.clearCookie("sid");
-
-  res.redirect("/");
 });
 
 //내 정보

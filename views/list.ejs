@@ -16,8 +16,6 @@
       <div id="hader-navbar-container">
         <ul>
           <li><a href="/">home</a></li>
-          <li><a href="/login">로그인</a></li>
-          <li><a href="/signup">회원가입</a></li>
           <li><a href="/mypage">내 정보</a></li>
         </ul>
       </div>
@@ -42,14 +40,19 @@
     <div class="container input-group mb-2">
       <input class="form-control" id="search-input">
       <button class="input-group-append btn btn-danger" id="search">검색</button>
+      <button type="button" class="btn btn-dark"><a href="/write">글쓰기</a></button>
     </div>
     
     <ul class="list-group">
       <% for (var i = 0; i < posts.length; i++){ %>
       <li class="list-group-item">
         <p>글 번호 : <%= posts[i]._id %></p>
+        <form action="/detail" method="POST">
         <h4><a href="/detail/<%= posts[i]._id%>"><%= posts[i].제목 %></a></h4>
-        <p>할일 마감 날짜 : <%= posts[i].내용 %></p>
+        </form>
+        <p> <%= posts[i].내용 %></p>
+        <p> 작성자 <%= posts[i].작성자ID %></p>
+
         <button class="delete  btn btn-danger" data-id="<%= posts[i]._id%>">삭제</button>
         <button class="edit  btn btn-danger""><a href="/edit/<%= posts[i]._id%>">수정</a></button>
       </li>
