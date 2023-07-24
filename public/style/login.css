@@ -1,0 +1,48 @@
+body {
+  background-color: rgba(135, 145, 153, 0.664);
+}
+
+div {
+  margin-top: 250px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 300px;
+  background-color: rgba(230, 230, 223, 0.925);
+  border-radius: 5px;
+  text-align: center;
+  padding: 20px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: none;
+}
+
+.in {
+  margin-bottom: 10px;
+}
+
+#btn {
+  background-color: azure;
+  margin-right: auto;
+  margin-bottom: 30px;
+  color: rgb(83, 69, 69);
+  margin-bottom: 20px;
+}
+
+#btn:hover {
+  color: darkgray;
+}
+
+a {
+  text-align: center;
+  text-decoration: none;
+  color: rgba(15, 23, 31, 0.623);
+}
+
+a:hover {
+  color: darkgrey;
+}

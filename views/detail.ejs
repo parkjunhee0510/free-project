@@ -4,29 +4,51 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="/style/main.css">
+    <link rel="stylesheet" type="text/css" href="/style/main.css" />
   </head>
   <body>
+    <div id="hader-navbar-container">
+      <ul>
+        <li><a href="/">home</a></li>
+        <li><a href="/login">로그인</a></li>
+        <li><a href="/signup">회원가입</a></li>
+        <li><a href="/mypage">내 정보</a></li>
+      </ul>
+    </div>
     <div class="header-box">
-        <h3><span>ALCOHOL</span> FREE</h3>
-        <button class="btn">Login</a></button>
-        <p>시발</p>
-      </div>
-      <hr />
-      <nav id="navbar">
-        <ul>
-          <li><a class="menuLink" href="/list">글 목록</a></li>
-          <li><a class="menuLink" href="#">메뉴2</a></li>
-          <li><a class="menuLink" href="#">메뉴3</a></li>
-          <li><a class="menuLink" href="#">메뉴4</a></li>
-        </ul>
-      </nav>
-      <hr />
-      <!-- <div class="middle-menu">
+      <h3><span>ALCOHOL</span> FREE</h3>
+      <p>test</p>
+    </div>
+    <hr />
+    <nav id="navbar">
+      <ul>
+        <li><a class="menuLink" href="/list">글 목록</a></li>
+        <li><a class="menuLink" href="#">메뉴2</a></li>
+        <li><a class="menuLink" href="#">메뉴3</a></li>
+        <li><a class="menuLink" href="#">메뉴4</a></li>
+      </ul>
+    </nav>
+    <hr />
+    <!-- <div class="middle-menu">
       </div> -->
 
-    <h4>제목 : 2번게시물의 <%= data.제목 %> </h4>
-    <h4>내용 : 2번게시물의 <%= data.내용 %> </h4>
+    <h4>제목 : <%= data.제목 %></h4>
+    <h4>내용 : <%= data.내용 %></h4>
+    <hr />
+    <h3>공사 예정</h3>
+    <button><a href="/list">글 목록</a></button>
 
+    <form action="/Comment" method="post">
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">내용</label>
+        <input
+          type="text"
+          class="form-control"
+          id="exampleInputPassword1"
+          name="date"
+        />
+      </div>
+      <button type="submit" class="btn btn-primary">등록</button>
+    </form>
   </body>
 </html>
