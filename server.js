@@ -8,11 +8,20 @@ app.use(methodOverride("_method"));
 require("dotenv").config();
 const bcrypt = require("bcrypt");
 const cookieParser = require("cookie-parser");
-
+const dayjs = require("dayjs");
+const multer = require("multer");
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
 const session = require("express-session");
 app.use(cookieParser());
+
+const storge = multer.diskStorage({
+  destination: (req, file, cb) => {
+    var time = dayjs();
+    cb(null, file.file.originalname + "test" + time);
+  },
+  filename: () => {},
+});
 
 app.use(
   session({
@@ -110,3 +119,11 @@ app.use(require("./routes/loginrouter.js"));
 app.post("/add", borderapi.post);
 //
 app.post("/mail", require("./routes/auth.js"));
+
+//페이징 api
+app.post("/apitest", require("./routes/border.js"));
+//
+
+//댓글 api
+app.post("/Comment", borderapi.comments);
+//

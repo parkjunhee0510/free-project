@@ -1,43 +1,52 @@
+const { json } = require("body-parser");
 const { param } = require("../routes/contents");
 var config = require("./config");
 const MongoClient = require("mongodb").MongoClient;
 
 const connect = require("./db_conn.js");
+const { Cookie } = require("express-session");
+const dayjs = require("dayjs");
 
-exports.listRead = (요청, 응답) => {
+exports.listRead = (req, res) => {
   //db 중 post 를 찾아 전체 데이터 값을 받아 출력
   db.collection("post")
     .find()
-    .toArray((error, res) => {
-      console.log(res);
-      응답.render("list.ejs", { posts: res });
+    .toArray((error, result) => {
+      console.log(result);
+      res.render("list.ejs", {
+        posts: result,
+        //유저 쿠키를 넘겨 수정,삭제버튼 본인만 보게 기능
+        usercookie: req.cookies.user,
+      });
     });
 };
 
 //페이징 api 테스트
 exports.pagetest = async (req, res, next) => {
-  const page = req.query.page || 1;
-  var skipSet = 1;
-  var offset = 5;
-  var setting = 0;
+  const page = parseInt(req.params.page); //page 값 받아오기
+  const limit = 5; // 한 페이지에 보여줄 게시물 수
+  const skip = (page - 1) * limit; // 건너뛸 게시물 수
+
   db.collection("post")
     .find()
-    .limit(offset)
-    .skip(setting * offset)
+    .skip(skip)
+    .limit(limit)
     .toArray((error, result) => {
       try {
         if (result) {
-          console.log(result);
+          console.log(page);
+          console.log(req.params.page);
           res.render("page.ejs", {
             posts: result,
-            offset: offset,
-            skipSet: skipSet - 1,
+            page,
           });
-          setting++;
         }
-      } catch (error) {}
+      } catch (error) {
+        next(error);
+      }
     });
 };
+//페이징 api 테스트
 
 //삭제
 exports.delete = (req, res) => {
@@ -110,6 +119,7 @@ exports.editUpdate = (req, res) => {
 //쓰기
 exports.post = (요청, 응답) => {
   응답.send("전송완료");
+  const time = dayjs();
 
   db.collection("counter").findOne({ name: "게시물갯수" }, (error, res) => {
     console.log(res.totalPost);
@@ -121,8 +131,9 @@ exports.post = (요청, 응답) => {
       내용: 요청.body.date,
       작성자: 요청.user._id,
       작성자ID: 요청.user.id,
+      작성날짜: time.format("YYYY-MM-DD HH:mm:ss"),
     };
-    //폼 태그에 입력시 id 값을 찾아 제목,내용 테이블에 데이터 기입
+    //폼 태그에 입력시 id 값을  찾아 제목,내용 테이블에 데이터 기입
     db.collection("post").insertOne(postValue, (에러, 결과) => {
       console.log("저장완료");
 
@@ -140,10 +151,24 @@ exports.post = (요청, 응답) => {
       );
     });
   });
-
-  console.log(요청.body.title);
-  console.log(요청.body.date);
 };
+
+//댓글기능 test
+exports.comments = (req, res) => {
+  const time = dayjs();
+
+  db.collection("Comments").find((err, ret) => {
+    var Comments = {
+      작성자: req.body.id,
+      작성내용: req.body.cmdate,
+      작성날짜: time.format("YYYY-MM-DD HH:mm:ss"),
+    };
+    db.collection("Comments").insertOne(Comments, (error, result) => {
+      console.log(result);
+    });
+  });
+};
+
 //쓰기
 
 //상세글 보기
@@ -152,8 +177,10 @@ exports.detailread = (req, res) => {
   db.collection("post").findOne(
     { _id: parseInt(req.params.id) },
     (error, result) => {
-      console.log(result);
-      res.render("detail.ejs", { data: result });
+      //댓글 기능 test
+      db.collection("Comments").find((err, ret) => {
+        res.render("detail.ejs", { data: result, cmdata: ret });
+      });
     }
   );
 };

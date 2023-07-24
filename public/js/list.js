@@ -1,3 +1,11 @@
+function cookietest(user) {
+  var nameOfCookie = name + "=";
+}
+
+function testbtn() {
+  alert(document.cookie);
+}
+
 $(".delete").click((e) => {
   var w = e.target.dataset.id; //button의 데이터 값을받아 넘겨주는 함수.
   $.ajax({

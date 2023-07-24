@@ -23,23 +23,22 @@
           </form>
           <p> <%= posts[i].내용 %></p>
           <p> 작성자 <%= posts[i].작성자ID %></p>
-  
+          
+          <% if(posts[i].작성자 == usercookie.user) { %>
           <button class="delete  btn btn-danger" data-id="<%= posts[i]._id%>">삭제</button>
           <button class="edit  btn btn-danger""><a href="/edit/<%= posts[i]._id%>">수정</a></button>
+          <% } %>
         </li>
         <% } %>
       </ul>
-      <form action="/page" method="POST">
-        <nav aria-label="Page navigation example">
-            <ul class="pagination">
-                <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item"><a class="page-link" href="#">Next</a></li>
-            </ul>
-        </nav>
-        </form>
+  
+    <form action="apitest" method="POST" name="page">
+      <div class="pagination">
+        <% for(let i = 1; i < posts.length; i++) { %>
+          <a href="/page/<%= i %>"><%= i %></a>
+        <% } %>
+      </div>
+    </form>
         <script src="/public/js/list.js"></script>
   </body>
 </html>

@@ -15,7 +15,7 @@ router.post(
     //인증 성공시 home으로 이동
 
     //쿠키생성
-    res.cookie("user", { userid: req.body.id });
+    res.cookie("user", req.body.id);
     res.redirect("/");
   }
 );
