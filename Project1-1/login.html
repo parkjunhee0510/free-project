@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/sign_up.css"/>
+    <title>Log In</title>
+    <script src="js/login.js"></script>
+  </head>
+  <body>
+    <div class="sub_header">
+        <div class="logo-img"></div>
+        <button class="btn"><a href="login.html">Login</a></button>
+        <button class="btn1"><a href="sign_up.html">회원가입</a></button>
+    </div>
+    <div>
+      <form action="">
+        <div>AF 로그인</div>
+        <input type="text" placeholder="아이디" class="in" name="userid"/>
+        <input type="password" placeholder="비밀번호" class="in" name="userpassword"/>
+        <input type="submit" id="btn" value="Log In" onclick="handleLogIn(event, this.form)"/>
+        <p>이미 회원이십니까?  <a href="login.html" class="login_button" onclick="signInSubmit();return false;">Log in</a></p>
+      </form>
+    </div>
+    
+  </body>
+</html>
