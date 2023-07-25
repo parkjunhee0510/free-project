@@ -22,7 +22,7 @@ exports.listRead = (req, res) => {
 };
 
 //페이징 api 테스트
-exports.pagetest = async (req, res, next) => {
+exports.pagetest = (req, res) => {
   const page = parseInt(req.params.page); //page 값 받아오기
   const limit = 5; // 한 페이지에 보여줄 게시물 수
   const skip = (page - 1) * limit; // 건너뛸 게시물 수
@@ -39,6 +39,7 @@ exports.pagetest = async (req, res, next) => {
           res.render("page.ejs", {
             posts: result,
             page,
+            usercookie: req.cookies.user,
           });
         }
       } catch (error) {

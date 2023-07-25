@@ -10,35 +10,94 @@
       integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" type="text/css" href="/style/main.css" />
+    <link rel="stylesheet" type="text/css" href="/style/list.css" />
   </head>
   <body>
-    <h1>pagetest</h1>
-    <ul class="list-group">
-        <% for (var i = 0; i < posts.length; i++){ %>
-        <li class="list-group-item">
-          <p>글 번호 : <%= posts[i]._id %></p>
-          <form action="/detail" method="POST">
-          <h4><a href="/detail/<%= posts[i]._id%>"><%= posts[i].제목 %></a></h4>
-          </form>
-          <p> <%= posts[i].내용 %></p>
-          <p> 작성자 <%= posts[i].작성자ID %></p>
-          
-          <% if(posts[i].작성자 == usercookie.user) { %>
-          <button class="delete  btn btn-danger" data-id="<%= posts[i]._id%>">삭제</button>
-          <button class="edit  btn btn-danger""><a href="/edit/<%= posts[i]._id%>">수정</a></button>
-          <% } %>
-        </li>
-        <% } %>
+    <div id="hader-navbar-container">
+      <ul>
+        <li><a href="/">home</a></li>
+        <li><a href="/mypage">내 정보</a></li>
       </ul>
-  
+    </div>
+    <div class="header-box">
+      <h3><span>ALCOHOL</span> FREE</h3>
+      <p></p>
+      <p>test</p>
+    </div>
+    <hr />
+    <nav id="navbar">
+      <ul>
+        <li><a class="menuLink" href="/page/1">게시판</a></li>
+        <li><a class="menuLink" href="#">메뉴2</a></li>
+        <li><a class="menuLink" href="#">메뉴3</a></li>
+        <li><a class="menuLink" href="#">메뉴4</a></li>
+      </ul>
+    </nav>
+    <hr />
+
+    <div class="container input-group mb-2">
+      <input class="form-control" id="search-input" />
+      <button class="input-group-append btn btn-danger" id="search">
+        검색
+      </button>
+      <button type="button" class="btn btn-dark">
+        <a href="/write">글쓰기</a>
+      </button>
+    </div>
+
+    <ul class="list-group">
+      <% for (var i = 0; i < posts.length; i++){ %>
+      <li class="list-group-item">
+        <div class="listBox">
+          <div>
+            <form action="/detail" method="POST">
+              <h4>
+                <a href="/detail/<%= posts[i]._id%>"><%= posts[i].제목 %></a>
+              </h4>
+            </form>
+          </div>
+          <div></div>
+          <div>
+            <p>작성자 <%= posts[i].작성자ID %></p>
+            <p>작성날짜 <%= posts[i].작성날짜 %></p>
+          </div>
+        </div>
+        <!-- 작성자 ID와 로그인 쿠키 비교 -->
+        <% if(posts[i].작성자ID == usercookie) { %>
+        <button
+          class="delete btn btn-danger"
+          id="test1"
+          data-id="<%= posts[i]._id%>"
+        >
+          삭제
+        </button>
+        <button id="test1" class="edit btn btn-danger">
+          <a href="/edit/<%= posts[i]._id%>">수정</a>
+        </button>
+        <% } %>
+      </li>
+      <% } %>
+    </ul>
+
     <form action="apitest" method="POST" name="page">
       <div class="pagination">
-        <% for(let i = 1; i < posts.length; i++) { %>
-          <a href="/page/<%= i %>"><%= i %></a>
-        <% } %>
-      </div>
-    </form>
-        <script src="/public/js/list.js"></script>
+          <nav aria-label="Page navigation example">
+            <ul class="pagination">
+              <li class="page-item">
+                <a class="page-link" href="#" aria-label="Previous">
+                  <span aria-hidden="true">&laquo;</span>
+                </a>
+              </li>
+              <% for(let i = 1; i < posts.length; i++) { %>
+                <li class="page-item"><a href="/page/<%= i %>"><%= i %></a></li>
+              <% } %>
+              <li class="page-item">
+                <a class="page-link" href="#" aria-label="Next">
+                  <span aria-hidden="true">&raquo;</span>
+                </a>
+              </li>
+            </ul>
+            </nav>
+    <script src="/public/js/list.js"></script>
   </body>
 </html>
