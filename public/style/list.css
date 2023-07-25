@@ -1,0 +1,152 @@
+body {
+  background-image: url(Sign_up_background.png);
+  position: relative;
+}
+li {
+  list-style: none;
+}
+
+#hader-navbar-container {
+  width: 100%;
+  height: 20px;
+}
+
+/*여기서*/
+.logo-container {
+  text-align: center;
+}
+
+.logo-img {
+  max-width: 200px;
+  height: 150px;
+}
+/*여까지 삭제*/
+
+#hader-navbar-container ul {
+  float: right;
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+#hader-navbar-container a {
+  display: block;
+  text-align: center;
+  margin: 0.25rem;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  font-weight: bold;
+  color: yellowgreen;
+}
+
+#hader-navbar-container a:hover {
+  background: yellowgreen;
+  color: black;
+}
+
+.header-box {
+  margin-top: 30px;
+  width: 100%;
+  background-color: white;
+  border: 2px solid gray;
+  border-radius: 5px;
+  /* background-image: url(../layout.png); */
+  padding: 1px;
+  text-align: center;
+}
+
+.header-box h3 {
+  margin-top: 20px;
+  margin-bottom: -13px;
+  margin-left: 30px;
+  font-size: 40px;
+  color: rgb(63, 28, 28);
+}
+
+.header-box h3:hover {
+  cursor: pointer;
+}
+
+.header-box p {
+  margin-left: 30px;
+  font-size: 25px;
+  color: rgb(65, 54, 54);
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 400px;
+}
+
+.header-box span {
+  display: inline-block;
+  width: 160px;
+  color: white;
+  background-color: black;
+  font-family: fantasy;
+}
+
+#navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 55px;
+}
+
+#navbar ul {
+  display: flex;
+  margin-left: -40px;
+  width: 100%;
+  height: 100%;
+}
+
+#navbar ul li {
+  border-left: 1px solid rgb(5, 5, 5);
+  width: 100%;
+  line-height: 50px;
+  color: white;
+  background-color: rgba(2, 2, 0, 0.705);
+  text-align: center;
+}
+
+#navbar .menuLink {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  display: block;
+  width: 100%;
+  height: 100%;
+  font-size: 14px;
+  font-weight: bold;
+  font-family: "Trebuchet MS";
+}
+
+#navbar ul :hover {
+  background-color: gray;
+  color: black;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.listBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.listBox a {
+  color: black;
+}
+
+.pagination {
+  color: black;
+}
+
+.pagination a {
+  color: black;
+}

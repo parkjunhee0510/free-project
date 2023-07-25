@@ -10,7 +10,7 @@
       integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" type="text/css" href="/style/main.css" />
+    <link rel="stylesheet" type="text/css" href="/style/list.css" />
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   </head>
   <body>
@@ -37,7 +37,6 @@
     <hr />
 
     <h4 class="m1-2 my-3">게시판</h4>
-
     <div class="container input-group mb-2">
       <input class="form-control" id="search-input" />
       <button class="input-group-append btn btn-danger" id="search">
@@ -51,15 +50,21 @@
     <ul class="list-group">
       <% for (var i = 0; i < posts.length; i++){ %>
       <li class="list-group-item">
-        <p>글 번호 : <%= posts[i]._id %></p>
-        <form action="/detail" method="POST">
-          <h4><a href="/detail/<%= posts[i]._id%>"><%= posts[i].제목 %></a></h4>
-        </form>
-        <p><%= posts[i].내용 %></p>
-        <p>작성자 <%= posts[i].작성자ID %></p>
-        <p>로그인 쿠키 <%= usercookie %></p>
-        <p>작성날짜 <%= posts[i].작성날짜 %></p>
+        <div class="listBox">
+          <div>
+            <form action="/detail" method="POST">
+              <h4>
+                <a href="/detail/<%= posts[i]._id%>"><%= posts[i].제목 %></a>
+              </h4>
+            </form>
+          </div>
+          <div></div>
+          <div>
+            <p>작성자 <%= posts[i].작성자ID %></p>
 
+            <p>작성날짜 <%= posts[i].작성날짜 %></p>
+          </div>
+        </div>
         <!-- 작성자 ID와 로그인 쿠키 비교 -->
         <% if(posts[i].작성자ID == usercookie) { %>
         <button
@@ -69,13 +74,21 @@
         >
           삭제
         </button>
-        <button id="test1" class="edit btn btn-danger" onclick="testbtn()">
+        <button id="test1" class="edit btn btn-danger">
           <a href="/edit/<%= posts[i]._id%>">수정</a>
         </button>
         <% } %>
       </li>
       <% } %>
     </ul>
+
+    <form action="apitest" method="POST" name="page">
+      <div class="pagination">
+        <% for(let i = 1; i < posts.length; i++) { %>
+        <a href="/page/<%= i %>"><%= i %></a>
+        <% } %>
+      </div>
+    </form>
     <script src="/public/js/list.js"></script>
 
     <!-- ajax 를 활용한 서버에 삭제 요청 보내기 -->
