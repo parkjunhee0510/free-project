@@ -125,7 +125,7 @@ app.post("/apitest", require("./routes/border.js"));
 //
 
 //댓글 api
-app.post("/Comment", borderapi.comments);
+app.post("/comment", borderapi.comments);
 //
 app.get("/test", (req, res) => {
   res.render("bordertest.ejs");

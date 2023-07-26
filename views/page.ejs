@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,6 +11,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" type="text/css" href="/style/list.css" />
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   </head>
   <body>
     <div id="hader-navbar-container">
@@ -35,6 +36,7 @@
     </nav>
     <hr />
 
+    <h4 class="m1-2 my-3">게시판</h4>
     <div class="container input-group mb-2">
       <input class="form-control" id="search-input" />
       <button class="input-group-append btn btn-danger" id="search">
@@ -56,7 +58,6 @@
               </h4>
             </form>
           </div>
-          <div></div>
           <div>
             <p>작성자 <%= posts[i].작성자ID %></p>
             <p>작성날짜 <%= posts[i].작성날짜 %></p>
@@ -81,23 +82,25 @@
 
     <form action="apitest" method="POST" name="page">
       <div class="pagination">
-          <nav aria-label="Page navigation example">
-            <ul class="pagination">
-              <li class="page-item">
-                <a class="page-link" href="#" aria-label="Previous">
-                  <span aria-hidden="true">&laquo;</span>
-                </a>
-              </li>
-              <% for(let i = 1; i < posts.length; i++) { %>
-                <li class="page-item"><a href="/page/<%= i %>"><%= i %></a></li>
-              <% } %>
-              <li class="page-item">
-                <a class="page-link" href="#" aria-label="Next">
-                  <span aria-hidden="true">&raquo;</span>
-                </a>
-              </li>
-            </ul>
-            </nav>
+        <nav aria-label="Page navigation example">
+          <ul class="pagination">
+            <li class="page-item">
+              <a class="page-link" href="#" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+              </a>
+            </li>
+            <% for(let i = 1; i < posts.length; i++) { %>
+            <li class="page-item"><a href="/page/<%= i %>"><%= i %></a></li>
+            <% } %>
+            <li class="page-item">
+              <a class="page-link" href="#" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </form>
     <script src="/public/js/list.js"></script>
   </body>
 </html>

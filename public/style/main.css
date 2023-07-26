@@ -323,3 +323,7 @@ figure {
 }
 
 /* 중간 배너 */
+
+.commentDate {
+  display: none;
+}

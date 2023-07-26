@@ -160,8 +160,8 @@ exports.comments = (req, res) => {
 
   db.collection("Comments").find((err, ret) => {
     var Comments = {
-      작성자: req.body.id,
-      작성내용: req.body.cmdate,
+      id: req.body.cmdate,
+      작성내용: req.body.date,
       작성날짜: time.format("YYYY-MM-DD HH:mm:ss"),
     };
     db.collection("Comments").insertOne(Comments, (error, result) => {
@@ -179,9 +179,17 @@ exports.detailread = (req, res) => {
     { _id: parseInt(req.params.id) },
     (error, result) => {
       //댓글 기능 test
-      db.collection("Comments").find((err, ret) => {
-        res.render("detail.ejs", { data: result, cmdata: ret });
-      });
+      db.collection("Comments")
+        .find()
+        .toArray((err, ret) => {
+          res.render("detail.ejs", {
+            data: result,
+            comment: ret,
+            id: parseInt(req.params.id),
+          });
+          console.log(ret);
+          console.log(req.params.id);
+        });
     }
   );
 };

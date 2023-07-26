@@ -34,13 +34,25 @@
 
     <h4>제목 : <%= data.제목 %></h4>
     <h4>내용 : <%= data.내용 %></h4>
+    <% for (var i = 0; i < comment.length; i++){ %> <% if(id == comment[i].id) {
+    %>
+    <p><%= comment[i].작성내용 %></p>
+    <% } %> <% } %>
+
     <hr />
     <h3>공사 예정</h3>
     <button><a href="/list">글 목록</a></button>
 
-    <form action="/Comment" method="post">
+    <form action="/comment" method="post">
       <div class="mb-3">
-        <label for="exampleInputPassword1" class="form-label">내용</label>
+        <label for="exampleInputPassword1" class="form-label">댓글 test</label>
+        <input
+          type="text"
+          class="commentDate"
+          id="commentDate"
+          name="cmdate"
+          value="<%= data._id %>"
+        />
         <input
           type="text"
           class="form-control"
