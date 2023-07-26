@@ -1,0 +1,125 @@
+html {
+    scroll-behavior: smooth;
+  }
+
+.header-line {
+    width: 100%;
+    height: 80px;
+    border: 1px solid black;
+}
+.title-img {
+    margin-top: 25px;
+    margin-left: 0px;
+    width: 15%;
+    height: 50px;
+    text-align: center;
+    float: left;
+   
+
+}
+
+.header-line button{
+    margin-top: -65px;
+    margin-bottom: 5px;
+    margin-left: 96%;
+    text-align: center;
+    float: left;
+}
+
+.main-background {
+    width: 100%;
+    background-color: white;
+    border: 3px solid gray;
+    border-radius: 5px;
+    /* background-image: url(../layout.png); */
+    padding: 1px;
+    text-align: center;
+}
+
+.main-background h3{
+    margin-top: 20px;
+    margin-bottom: -13px;
+    margin-left: 30px;
+    font-size: 40px;
+    color: rgb(63, 28, 28);
+}
+
+.main-background p{
+    margin-left: 30px;
+    font-size: 17px;
+    color: rgb(43, 18, 18);
+}
+
+#navbar {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+    width: 1900px;
+    height: 50px;
+    border-radius: 18px;
+    margin-top: 1px;
+    
+}
+
+#navbar ul li{
+    border-left: 1px solid white;
+    float: left;
+    width: 24%;
+    height: 100%;
+    line-height: 50px;
+    vertical-align: middle;
+    color: white;
+    background-color: rgba(2, 2, 0, 0.705);
+    text-align: center;
+}
+
+#navbar .menuLink {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    display: block;
+    width: 25%;
+    font-size: 12px;
+    font-weight: bold;
+    font-family: 'Trebuchet MS',Dotum, arial;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+li {
+    list-style: none;
+}
+
+.middle-menu {
+    background-color: rgb(139, 70, 70);
+    margin-top: 50px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 1800px;
+    height: 550px;
+    text-align: center;
+    font-size: 30px;
+    background-image: url(../test.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+
+
+
+.menu-test {
+    margin-top: 50px;
+    margin-left: 25px;
+    width: 20%;
+    height: 350px;
+    float: left;
+    background-color: black;
+}
+
+.menu-test2{
+    margin-top: 50px;
+    width: 50%;
+    height: 350px;
+    float: left;
+    background-color: aqua;
+}

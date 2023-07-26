@@ -1,0 +1,211 @@
+/* 바디 백그라운드 날릴거 */
+body {
+background-color: black;
+}
+
+li {
+    list-style: none;
+}
+
+#hader-navbar-container {
+    width: 100%;
+    height: 20px;
+}
+
+
+/*여기서*/
+.logo-container {
+    text-align: center;
+}
+
+.logo-img {
+    max-width: 200px;
+    height: 150px;
+}
+/*여까지 삭제*/
+
+
+#hader-navbar-container ul {
+    float: right;
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+#hader-navbar-container a {
+    display: block;
+    text-align: center;
+    margin: 0.25rem;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    font-weight: bold;
+    color: yellowgreen;
+}
+
+#hader-navbar-container a:hover {
+    background: yellowgreen;
+    color: black;
+}
+
+.header-box {
+    margin-top: 30px;
+    width: 100%;
+    background-color: white;
+    border: 2px solid gray;
+    border-radius: 5px;
+    /* background-image: url(../layout.png); */
+    padding: 1px;
+    text-align: center;
+}
+
+.header-box h3 {
+    margin-top: 20px;
+    margin-bottom: -13px;
+    margin-left: 30px;
+    font-size: 40px;
+    color: rgb(63, 28, 28);
+}
+
+.header-box h3:hover{
+    cursor: pointer;
+}
+
+.header-box p {
+    margin-left: 30px;
+    font-size: 25px;
+    color: rgb(65, 54, 54);
+    font-family: "Times New Roman", Times, serif;
+    font-weight: 400px;
+}
+
+.header-box span {
+    display: inline-block;
+    width: 160px;
+    color: white;
+    background-color: black;
+    font-family: fantasy;
+}
+/* form태그 */
+
+form {
+    margin-top: 40px;
+}
+
+label {
+    display:block;
+    box-sizing: border-box;
+    color:lightseagreen;
+    font-size: 20px;
+    text-align: right;
+    margin-right: 4%;
+    font-weight: bold;
+
+}
+
+#exampleInputEmail1 {
+    margin-bottom: 30px;
+    margin-left: 4%;
+    margin-right: 4%;
+    background-size: cover;
+    color: black;
+    width: 92%;
+    height: 60px;
+    font-size: 25px;
+    font-weight: bold;
+    border-width: 2px;
+    border-radius: 10px;
+}
+#exampleInputEmail1:hover{
+
+    border-color: aqua;
+}
+#exampleInputEmail1:focus{
+    color: slategray;
+}
+
+
+#exampleInputPassword1 {
+    border-width: 2px;
+    border-radius: 10px;
+    width: 92%;
+    margin-left: 4%;
+    margin-right: 4%;
+    height: 200px;
+    text-align:start;
+    font-size: 18px;
+}
+#exampleInputPassword1:hover {
+    
+    border-color: aqua;
+}
+#exampleInputPassword1:focus{
+    color: slategray;
+}
+
+/* 버튼 */
+button {
+    margin-top: 1.5%;
+    float: right;
+    margin-right: 4.5%;
+    width: 70px;
+    height: 50px;
+    background-size: cover;
+    font-size: 20px;
+    color:crimson;
+    font-weight: bold;
+    border-radius: 50px;
+    background-color: black;
+}
+button:hover{
+    cursor: pointer;
+    background-color:darkgray;
+    border-color: black;
+    
+}
+
+/* 수정 이미지 */
+.revision-img {
+    height: auto;
+    width: 70%;
+    margin-top: 40px;
+    margin-right: 4.5%;
+    margin-left: 4.5%;
+    
+    float: right;
+    max-width: 100%;
+}
+
+
+
+/* 팝업css */
+.popup-container {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    padding: 20px;
+    border: 1px solid #cccccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+  }
+  
+  .popup-content {
+    text-align: center;
+  }
+  
+  .popup-content h2 {
+    margin-bottom: 10px;
+  }
+  
+  #openPopupBtn {
+    margin-top: 20px;
+    cursor: pointer;
+  }
+  
+  #closePopupBtn {
+    margin-top: 20px;
+    cursor: pointer;
+  }

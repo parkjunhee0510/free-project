@@ -1,0 +1,497 @@
+/* 바디 백그라운드 날릴거 */
+body {
+    background-color: lightblue;
+    }
+    
+    li {
+        list-style: none;
+    }
+    
+    #hader-navbar-container {
+        width: 100%;
+        height: 20px;
+    }
+    
+    
+    /*여기서*/
+    .logo-container {
+        text-align: center;
+    }
+    
+    .logo-img {
+        max-width: 200px;
+        height: 150px;
+    }
+    /*여까지 삭제*/
+    
+    
+    #hader-navbar-container ul {
+        float: right;
+        list-style: none;
+        display: flex;
+        margin: 0px;
+        padding: 0px;
+    }
+    
+    #hader-navbar-container a {
+        display: block;
+        text-align: center;
+        margin: 0.25rem;
+        padding: 0.5rem 1rem;
+        text-decoration: none;
+        font-weight: bold;
+        color: yellowgreen;
+    }
+    
+    #hader-navbar-container a:hover {
+        background: yellowgreen;
+        color: black;
+    }
+    
+    .header-box {
+        margin-top: 30px;
+        width: 100%;
+        background-color: white;
+        border: 2px solid gray;
+        border-radius: 5px;
+        /* background-image: url(../layout.png); */
+        padding: 1px;
+        text-align: center;
+    }
+    
+    .header-box h3 {
+        margin-top: 20px;
+        margin-bottom: -13px;
+        margin-left: 30px;
+        font-size: 40px;
+        color: rgb(63, 28, 28);
+    }
+    
+    .header-box h3:hover{
+        cursor: pointer;
+    }
+    
+    .header-box p {
+        margin-left: 30px;
+        font-size: 25px;
+        color: rgb(65, 54, 54);
+        font-family: "Times New Roman", Times, serif;
+        font-weight: 400px;
+    }
+    
+    .header-box span {
+        display: inline-block;
+        width: 160px;
+        color: white;
+        background-color: black;
+        font-family: fantasy;
+    }  
+    
+    /* form 태그 */
+    
+    
+    form {
+        margin-top: 20px;
+        margin-left: 4%;
+        margin-right: 12%;
+        
+        
+    }
+    
+    label {
+        display:block;
+        box-sizing: border-box;
+        color:black;
+        font-size: 20px;
+        text-align: right;
+        font-weight: bold;
+        margin-left: 4%;
+        margin-right: 8%;
+    }
+    /* 제목 */
+    #exampleInputEmail1 {
+        margin-bottom: 30px;
+        background-size: cover;
+        color: black;
+        width: 92%;
+        height: 60px;
+        font-size: 25px;
+        font-weight: bold;
+        border-width: 2px;
+        border-radius: 10px;
+        margin-left: 10%;
+        
+    }
+    #exampleInputEmail1:hover{
+    
+        border-color: aqua;
+    }
+    #exampleInputEmail1:focus{
+        color: slategray;
+    }
+    
+    /* 이미지 */
+    .revision-img{
+        margin-top: 30px;
+        width: auto;
+        max-height: 600px;
+        margin-left: 30%;
+        margin-right: 5%;
+        margin-bottom: 0px;
+        border: 2px solid white;
+    }
+    
+    /* 이미지 re-upload 버튼 */
+    .img-re-upload {
+        margin-bottom: 0px;
+        border-radius: 10px;
+        background-color: white;
+        color: black;
+        font-weight: bold;
+        margin-top: 1.5%;
+        float: right;
+        margin-right: 2%;
+        width: 80px;
+        height: 50px;
+        background-size: cover;
+        font-size: 10px;
+
+    }
+
+       
+
+    .img-re-upload:hover{
+        cursor: pointer;
+        background-color:darkgray;
+        border-color: black;
+        
+    }
+    
+    
+    
+    /* 내용 */
+    #exampleInputPassword1 {
+        margin-top: 20px;
+        margin-bottom: 10px;
+        background-size: cover;
+        color: black;
+        width: 99.5%;
+        height: 237px;
+        font-size: 25px;
+        margin-left: 0%;
+        
+        border-width: 2px;
+        border-radius: 0px;
+    }
+    #exampleInputPassword1:hover{
+    
+        border-color: aqua;
+    }
+    #exampleInputPassword1:focus{
+        color: slategray;
+    }
+    
+    
+    
+    
+    
+
+    button:hover{
+        cursor: pointer;
+        background-color:darkgray;
+        border-color: black;
+        
+    }
+    
+    
+    .chat-input{
+        margin-top: 20px;
+        margin-bottom: 10px;
+        background-size: cover;
+        color: black;
+        width: 92%;
+        height: 160px;
+        font-size: 25px;
+        margin-left: 10%;
+        
+        border-width: 2px;
+        border-radius: 10px;
+    }
+    
+    .chat-button {
+        color: white;
+        margin-right: 1%;
+    }
+
+    
+    
+/* 글 목록 버튼 */
+
+.div-category{
+    width: 100%;
+    background-color: gray;
+}
+
+.post-category {
+    float: right;
+    border-width: 2px;
+    margin-bottom: 60px;
+    color: white;
+    background-color: black;
+    border-radius: 5px;
+}
+
+
+/* 리스트 */
+    .board_list {
+        width: 93%;
+        border: 1px solid #000;
+        margin-left: 160px;
+        margin-top: 109px;
+        background-color: white;
+        margin-bottom: 0px;
+    }
+    
+    .board_list > div {
+        border-bottom: 1px solid #ddd;
+        font-size: 0;
+    }
+    
+    .board_list > div:last-child {
+        border-bottom: 1px solid #000;
+    }
+    
+    .board_list > div > div {
+        display: inline-block;
+        padding: 15px 0;
+        text-align: center;
+        font-size: 1.4rem;
+    }
+    
+    .board_list > div.top > div {
+        font-weight: 500;
+    }
+    
+    .board_list .num {
+        width: 10%;
+        font-size: 5px;
+    }
+    
+    .board_list .title {
+        width: 40%;
+        text-align: left;
+        text-decoration: none;
+        font-size: 5px;        
+    }
+    
+    .board_list .writer {
+        width: 10%;
+        font-size: 5px;
+    }
+    
+    .board_list .date {
+        width: 10%;
+        font-size: 5px;
+    }
+    
+    .board_list .count {
+        width: 10%;
+        font-size: 5px;
+    }
+    
+    /* 게시글 title박스*/
+    .write {
+        width: 93%;
+        height: 5px;
+        border: 2px solid white;
+        margin-left: 10%;
+        margin-right: auto;
+        margin-bottom: 50px;
+        background-color: #f9f9f9;
+        display: flex;
+        flex-direction: column;
+        padding: 32px 0;
+        background-size: cover;
+        border-radius: 10px;
+        border-color: black;
+        text-align: center;
+    }
+    
+    /* 이미지,내용 박스*/
+    .image-bigbox {
+        width: 92%;
+        height: 900px;
+        border: 2px solid white;
+        margin-left: 10%;
+        background-color: white;
+        border: 3px solid black;
+        
+    }
+
+
+
+
+        /* 인덱스 댓글 css */
+    
+    #form-commentInfo{
+        width: 100%;
+        margin-left: 10%;
+        margin-top: 40px;   
+        margin-bottom: 5%;
+      }
+      
+      #comment-count{
+        margin-bottom: 10px; 
+        color: white;
+      }
+      
+      #comment-input{
+        width: 91.9%;
+        height: 3.4em;
+        display: flex;
+        background-color: gray;
+        color: white;
+        
+      }
+      
+
+      /* 등록 버튼 */
+      #submit{
+        background-color: black;
+        width: 5.5em;
+        height: 3.3em;;
+        font-size: 15px;
+        font-weight: bold;
+        color: aliceblue;
+        border-radius: 0px;
+        margin-right: 7.65%;
+        float: right;        
+      }
+      
+      #voteUp, #voteDown{
+        width: 3.5em;
+        height: 1.9em;
+        background-color: aqua;
+      }
+      
+      #comments{
+        margin-top: 10px;
+      }
+      
+      .eachComment{   
+        width :90%; 
+        margin: 10px;  
+        padding: 0.5em; 
+        border-bottom: 1px solid purple ;
+        margin-top: 5px;
+        margin-left: 10%;
+    
+      }
+      
+      .eachComment .name{
+        font-size: 1.5em;
+        font-weight: bold;
+        margin-bottom: 0.3em;
+        display: flex;
+        justify-content: space-between;
+        color: brown;
+      }
+      
+      .eachComment .inputValue{
+        font-size: 1.2em;
+        font-style: italic;  
+        color: chocolate;  
+      }
+      
+      .eachComment .time{
+        font-size: 1em;
+        color: pink;
+        font-style: oblique;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+        
+      }
+      
+      .eachComment .voteDiv{
+        display: flex;
+        justify-content: flex-end;
+        
+      }
+      
+      .eachComment .deleteComment{
+        background-color: red;
+        color: blue;
+
+      }
+      
+      .modal{
+          
+        /* 모달 css 정보는 https://codepen.io/sdthornton/pen/wBZdXq 여기참고하면 됨 */
+        box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+        /* 모달창 크기 100% 만들기 위한 설정 => 스크린에 꽉채운거. */
+        position: fixed;  
+        top : 0;
+        left : 0;
+        width: 100%;
+        height : 100%;
+        display: flex;   
+        justify-content: center;    
+        align-items: center;   
+      }
+
+      /* 모달창 뜨면서 뒤에 오버레이 배경준거. 모달창하고 같이 끌어옴. */
+      .modal__overlay{
+        background-color: rgba(0,0,0,0.6);
+        width: 100%;
+        height : 100%;
+        position: absolute;
+        
+      }
+      
+      .modal__content{    
+        background-color: white;
+        padding: 50px 100px;
+        text-align: center;
+        position: relative;
+        width : 15%;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+        border-radius: 15px;
+          
+      }
+      
+      .modal__content #modifyVal{
+       margin-bottom: 1em;   
+       width: 100%;
+       height: 3.3em;  
+      }
+      
+      
+      
+      #inBtn{
+        display: flex;
+        justify-content: center; 
+      }
+      #inBtn #ok {    
+        all : unset;
+        background-color: steelblue;
+        color: white;
+        padding: 5px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-right : 10px;
+        
+      }
+      
+      #inBtn #cancle {    
+        all : unset;
+        background-color: steelblue;
+        color: white;
+        padding: 5px 20px;
+        border-radius: 5px;
+        cursor: pointer; 
+       
+      }
+      
+      .hidden{
+        display: none;
+      }
