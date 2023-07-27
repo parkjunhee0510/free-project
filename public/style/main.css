@@ -327,3 +327,39 @@ figure {
 .commentDate {
   display: none;
 }
+
+#comment-edit {
+  display: none;
+}
+
+.btnBox {
+  text-align: center;
+}
+
+.test3 {
+  display: inline-block;
+}
+
+.dayRight {
+  float: right;
+}
+
+#commentFont {
+  font-size: 15px;
+  color: rgb(89, 89, 201);
+}
+
+#commentFont2 {
+  margin-left: 35rem;
+  font-size: 20px;
+}
+
+#commentFont3 {
+  margin-left: -35rem;
+  font-size: 20px;
+}
+
+.pageListBox {
+  margin-left: auto;
+  margin-right: auto;
+}

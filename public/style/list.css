@@ -150,3 +150,7 @@ a {
 .pagination a {
   color: black;
 }
+
+.pageListBox {
+  text-align: center;
+}

@@ -42,17 +42,21 @@
       <button class="input-group-append btn btn-danger" id="search">
         검색
       </button>
-      <button type="button" class="btn btn-dark">
-        <a href="/write">글쓰기</a>
+      <button type="button" class="btn btn-dark" onclick="moveWrite()">
+        글쓰기
       </button>
     </div>
-
     <ul class="list-group">
       <% for (var i = 0; i < posts.length; i++){ %>
       <li class="list-group-item">
         <div class="listBox">
           <div>
-            <form action="/detail" method="POST">
+            <form
+              action="/detail"
+              method="POST"
+              data-id="posts[i]._id"
+              class="listId"
+            >
               <h4>
                 <a href="/detail/<%= posts[i]._id%>"><%= posts[i].제목 %></a>
               </h4>
@@ -80,7 +84,7 @@
       <% } %>
     </ul>
 
-    <form action="apitest" method="POST" name="page">
+    <form action="apitest" method="POST" name="page" class="pageListBox">
       <div class="pagination">
         <nav aria-label="Page navigation example">
           <ul class="pagination">
@@ -89,8 +93,10 @@
                 <span aria-hidden="true">&laquo;</span>
               </a>
             </li>
-            <% for(let i = 1; i < posts.length; i++) { %>
-            <li class="page-item"><a href="/page/<%= i %>"><%= i %></a></li>
+            <% for(let i = 1; i < (totalPost / 5) + 1; i++) { %>
+            <li class="page-item">
+              <a class="page-link" href="/page/<%= i %>"><%= i %></a>
+            </li>
             <% } %>
             <li class="page-item">
               <a class="page-link" href="#" aria-label="Next">

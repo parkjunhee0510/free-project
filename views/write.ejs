@@ -31,7 +31,7 @@
     <hr />
     <nav id="navbar">
       <ul>
-        <li><a class="menuLink" href="/list">게시판</a></li>
+        <li><a class="menuLink" href="/page/1">게시판</a></li>
         <li><a class="menuLink" href="#">메뉴2</a></li>
         <li><a class="menuLink" href="#">메뉴3</a></li>
         <li><a class="menuLink" href="#">메뉴4</a></li>
@@ -40,7 +40,7 @@
     <hr />
 
     <!-- 폼 박스 -->
-    <form action="/add" method="post">
+    <form action="/add" method="post" onclick=" moveList()">
       <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">제목</label>
         <input
@@ -60,9 +60,10 @@
           name="date"
         />
       </div>
-      <button type="submit" class="btn btn-primary">
-        <a href="/list">Submit</a>
+      <button type="submit" class="btn btn-primary" onclick=" moveList()">
+        글 쓰기
       </button>
     </form>
+    <script src="/public/js/list.js"></script>
   </body>
 </html>
