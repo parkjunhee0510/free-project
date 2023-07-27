@@ -83,7 +83,7 @@
 
     <form action="apitest" method="POST" name="page">
       <div class="pagination">
-        <% for(let i = 1; i < posts.length; i++) { %>
+        <% for(let i = 1; i < totalPost / 5; i++) { %>
         <a href="/page/<%= i %>"><%= i %></a>
         <% } %>
       </div>

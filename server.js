@@ -132,3 +132,12 @@ app.get("/test", (req, res) => {
 });
 //
 app.get("/test2/:id", borderapi.editPage);
+//
+
+//댓글삭제
+app.delete("/commentdelete", borderapi.commentdelete);
+//
+
+//댓글 수정
+app.post("/commentedit", borderapi.commentEditUpdate);
+//댓글 수정

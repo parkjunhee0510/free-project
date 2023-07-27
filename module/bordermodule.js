@@ -7,6 +7,7 @@ const connect = require("./db_conn.js");
 const { Cookie } = require("express-session");
 const dayjs = require("dayjs");
 
+//읽기
 exports.listRead = (req, res) => {
   //db 중 post 를 찾아 전체 데이터 값을 받아 출력
   db.collection("post")
@@ -20,8 +21,9 @@ exports.listRead = (req, res) => {
       });
     });
 };
+//읽기
 
-//페이징 api 테스트
+//페이징 api
 exports.pagetest = (req, res) => {
   const page = parseInt(req.params.page); //page 값 받아오기
   const limit = 5; // 한 페이지에 보여줄 게시물 수
@@ -32,22 +34,29 @@ exports.pagetest = (req, res) => {
     .skip(skip)
     .limit(limit)
     .toArray((error, result) => {
-      try {
-        if (result) {
-          console.log(page);
-          console.log(req.params.page);
-          res.render("page.ejs", {
-            posts: result,
-            page,
-            usercookie: req.cookies.user,
-          });
+      db.collection("counter").findOne({ name: "게시물갯수" }, (err, ret) => {
+        console.log(ret.totalPost);
+        var total_post = ret.totalPost;
+        try {
+          if (ret) {
+            console.log(page);
+            console.log(req.params.page);
+            res.render("page.ejs", {
+              posts: result,
+              page,
+              usercookie: req.cookies.user,
+              totalPost: ret.totalPost,
+            });
+          }
+        } catch (err) {
+          next(err);
         }
-      } catch (error) {
-        next(error);
-      }
+        //
+      });
+      //
     });
 };
-//페이징 api 테스트
+//페이징 api
 
 //삭제
 exports.delete = (req, res) => {
@@ -61,12 +70,40 @@ exports.delete = (req, res) => {
   //db id데이터 값을 찾아 삭제
   db.collection("post").deleteOne(deleteData, (error, result) => {
     console.log("삭제완료");
+    db.collection("counter").updateOne(
+      { name: "게시물갯수" },
+      { $inc: { totalPost: -1 } },
+      (err, ret) => {
+        if (error) {
+          return console.log("에러");
+        }
+      }
+    );
 
     //res.status (200) 는 성공적으로 실행했다는 신호 200은 성공 400은 에러코드
     res.status(200).send({ message: "성공했습니다" });
   });
 };
 //삭제
+
+//댓글삭제
+exports.commentdelete = (req, res) => {
+  console.log(req.body._id);
+
+  //id 값은 int형식임으로 parseInt 함수로 이용하여 int로 변환 시켜줌
+  req.body._id = parseInt(req.body._id);
+  var deleteData = { _id: req.body._id, 작성자: req.user.id };
+  console.log(req.body._id);
+
+  //db id데이터 값을 찾아 삭제
+  db.collection("Comments").deleteOne(deleteData, (error, result) => {
+    console.log("삭제완료");
+
+    //res.status (200) 는 성공적으로 실행했다는 신호 200은 성공 400은 에러코드
+    res.status(200).send({ message: "성공했습니다" });
+  });
+};
+//댓글삭제
 
 //검색
 exports.search = (req, res) => {
@@ -104,6 +141,7 @@ exports.editPage = (req, res) => {
   );
 };
 
+//수정
 exports.editUpdate = (req, res) => {
   //서버로 부터 PUT 요청 들어오면 게시물 수청 처리
   db.collection("post").updateOne(
@@ -117,9 +155,21 @@ exports.editUpdate = (req, res) => {
 };
 //수정
 
+//댓글수정
+exports.commentEditUpdate = (req, res) => {
+  //서버로 부터 PUT 요청 들어오면 게시물 수청 처리
+  db.collection("post").updateOne(
+    { _id: parseInt(req.body._id) },
+    { $set: { 작성내용: req.body.date } },
+    (error, result) => {
+      console.log("수정완료");
+    }
+  );
+};
+//댓글수정
+
 //쓰기
 exports.post = (요청, 응답) => {
-  응답.send("전송완료");
   const time = dayjs();
 
   db.collection("counter").findOne({ name: "게시물갯수" }, (error, res) => {
@@ -153,24 +203,39 @@ exports.post = (요청, 응답) => {
     });
   });
 };
+//쓰기
 
-//댓글기능 test
+//댓글
 exports.comments = (req, res) => {
   const time = dayjs();
 
-  db.collection("Comments").find((err, ret) => {
+  db.collection("commentcounter").findOne({ name: "댓글개수" }, (err, ret) => {
+    var total_post = ret.totalComment;
+
     var Comments = {
       id: req.body.cmdate,
+      _id: total_post + 1,
+      작성자: req.user.id,
       작성내용: req.body.date,
       작성날짜: time.format("YYYY-MM-DD HH:mm:ss"),
     };
     db.collection("Comments").insertOne(Comments, (error, result) => {
       console.log(result);
+
+      db.collection("commentcounter").updateOne(
+        { name: "댓글개수" },
+
+        { $inc: { totalComment: 1 } },
+        (에러, 결과) => {
+          if (에러) {
+            return console.log("에러");
+          }
+        }
+      );
     });
   });
 };
-
-//쓰기
+//댓글
 
 //상세글 보기
 
@@ -178,18 +243,24 @@ exports.detailread = (req, res) => {
   db.collection("post").findOne(
     { _id: parseInt(req.params.id) },
     (error, result) => {
-      //댓글 기능 test
+      //댓글 기능
       db.collection("Comments")
         .find()
         .toArray((err, ret) => {
-          res.render("detail.ejs", {
-            data: result,
-            comment: ret,
-            id: parseInt(req.params.id),
-          });
-          console.log(ret);
-          console.log(req.params.id);
+          try {
+            res.render("detail.ejs", {
+              data: result,
+              comment: ret,
+              id: parseInt(req.params.id),
+              usercookie: req.cookies.user,
+            });
+            console.log(ret);
+            console.log(req.params.id);
+          } catch (err) {
+            next(err);
+          }
         });
     }
   );
 };
+//상세글보기
