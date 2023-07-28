@@ -149,7 +149,7 @@ exports.editUpdate = (req, res) => {
     { $set: { 제목: req.body.title, 내용: req.body.date } },
     (error, result) => {
       console.log("수정완료");
-      res.redirect("/list");
+      res.redirect("/page/1");
     }
   );
 };
@@ -187,14 +187,14 @@ exports.post = (요청, 응답) => {
     //폼 태그에 입력시 id 값을  찾아 제목,내용 테이블에 데이터 기입
     db.collection("post").insertOne(postValue, (에러, 결과) => {
       console.log("저장완료");
-
+      응답.redirect("/page/1");
       // db 개수 증가 함수
       db.collection("counter").updateOne(
         { name: "게시물갯수" },
 
         // 오퍼레이터 연산자
         { $inc: { totalPost: 1 } },
-        (error, res) => {
+        (error, ret) => {
           if (error) {
             return console.log("에러");
           }
