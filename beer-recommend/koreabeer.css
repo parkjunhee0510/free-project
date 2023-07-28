@@ -1,0 +1,215 @@
+li {
+    list-style: none;
+  }
+  
+  #hader-navbar-container {
+    width: 100%;
+    height: 20px;
+  }
+  
+  #hader-navbar-container ul {
+    float: right;
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+  
+  #hader-navbar-container a {
+    display: block;
+    text-align: center;
+    margin: 0.25rem;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+  }
+  
+  #hader-navbar-container a:hover {
+    background: yellowgreen;
+  }
+  
+  .header-box {
+    margin-top: 30px;
+    width: 100%;
+    background-color: white;
+    border: 2px solid gray;
+    border-radius: 5px;
+    /* background-image: url(../layout.png); */
+    padding: 1px;
+    text-align: center;
+  }
+  
+  .header-box h3 {
+    margin-top: 20px;
+    margin-bottom: -13px;
+    margin-left: 30px;
+    font-size: 40px;
+    color: rgb(63, 28, 28);
+  }
+  
+  .header-box p {
+    margin-left: 30px;
+    font-size: 25px;
+    color: rgb(65, 54, 54);
+    font-family: "Times New Roman", Times, serif;
+    font-weight: 400px;
+  }
+  
+  .header-box span {
+    display: inline-block;
+    width: 160px;
+    color: white;
+    background-color: black;
+    font-family: fantasy;
+  }
+  
+  #navbar {
+  
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 55px;
+  }
+  
+  #navbar ul {
+    display: flex;
+    margin-left: -40px;
+    width: 100%;
+    height: 80%;
+  }
+  
+  #navbar ul li {
+    border-left: 1px solid rgb(5, 5, 5);
+    width: 100%;
+    line-height: 40px;
+    color: white;
+    background-color: rgba(2, 2, 0, 0.705);
+    text-align: center;
+  }
+  
+  #navbar .menuLink {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    display: block;
+    width: 100%;
+    height: 100%;
+    font-size: 12px;
+    font-weight: bold;
+    font-family: "Trebuchet MS";
+  }
+  
+  #navbar ul :hover {
+    background-color: gray;
+    color: black;
+  }
+  /* drink */
+
+  #item {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+  }
+
+
+
+.image_text_header {
+  float: right;
+  margin-top: 30px;
+  width: 70%;
+  background-color: white;
+  border: 2px solid gray;
+  border-radius: 5px;
+  padding: 1px;
+  text-align: center;
+  
+}
+
+.image_text_header h3 {
+  
+  margin-top: 20px;
+  margin-bottom: -13px;
+  margin-left: 30px;
+  font-size: 40px;
+  color: rgb(63, 28, 28) ;
+  text-align: center;
+}
+
+.image_text_content {
+  float: right;
+  margin-top: px;
+  width: 70%;
+  height: 700px;
+  background-color: white;
+  border: 2px solid gray;
+  border-radius: 5px;
+  padding: 1px;
+  text-align: center;
+  
+}
+
+.image_text_content span {
+  margin-top: 20px;
+  margin-bottom: -13px;
+  margin-left: 30px;
+  font-size: 40px;
+  color: rgb(63, 28, 28) ;
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+  video {
+    
+    background-attachment: fixed;
+    background-size: 700px 700px;
+    background: url(cass-korean.mp4)
+  }
+
+  
+ .image1 {
+
+ 
+  background: url(cass.png) no-repeat;
+  background-attachment: fixed;
+  background-size:300px 400px; /* Maintain the original image size */
+ 
+ }
+
+ .image2 {
+    background: url(terra.png) no-repeat;
+    background-attachment: fixed;
+    background-size:300px 400px;
+}
+
+.image3 {
+    background: url(cloud.png) no-repeat;
+    background-attachment: fixed;
+    background-size: 300px 400px;
+}
+
+img{
+  width: 100%;
+  height: 100%;
+}
+ 
+
+.text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  background: #1e3932;
+  font-size: 1.1rem;
+}
+
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css");
+
+
+
