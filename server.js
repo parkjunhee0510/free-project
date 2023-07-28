@@ -128,7 +128,7 @@ app.post("/apitest", require("./routes/border.js"));
 app.post("/comment", borderapi.comments);
 //
 app.get("/test", (req, res) => {
-  res.render("bordertest.ejs");
+  res.render("drinktest.ejs");
 });
 //
 app.get("/test2/:id", borderapi.editPage);

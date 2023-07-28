@@ -69,7 +69,7 @@ function displayOnOff(e) {
 }
 
 function moveList() {
-  location.href = "/list";
+  location.href = "/page/1";
 }
 
 function moveWrite() {
