@@ -2,6 +2,7 @@ const { json } = require("body-parser");
 const { param } = require("../routes/contents");
 var config = require("./config");
 const MongoClient = require("mongodb").MongoClient;
+const multer = require("multer");
 
 const connect = require("./db_conn.js");
 const { Cookie } = require("express-session");
@@ -89,6 +90,7 @@ exports.delete = (req, res) => {
 //댓글삭제
 exports.commentdelete = (req, res) => {
   console.log(req.body._id);
+  var pages = req.body.cmdate;
 
   //id 값은 int형식임으로 parseInt 함수로 이용하여 int로 변환 시켜줌
   req.body._id = parseInt(req.body._id);
@@ -100,7 +102,11 @@ exports.commentdelete = (req, res) => {
     console.log("삭제완료");
 
     //res.status (200) 는 성공적으로 실행했다는 신호 200은 성공 400은 에러코드
-    res.status(200).send({ message: "성공했습니다" });
+    if (result) {
+      res.redirect("/detail/" + pages);
+    } else {
+      return res.status(400).send({ message: "실패" });
+    }
   });
 };
 //댓글삭제
@@ -144,14 +150,57 @@ exports.editPage = (req, res) => {
 //수정
 exports.editUpdate = (req, res) => {
   //서버로 부터 PUT 요청 들어오면 게시물 수청 처리
-  db.collection("post").updateOne(
-    { _id: parseInt(req.body.id) },
-    { $set: { 제목: req.body.title, 내용: req.body.date } },
-    (error, result) => {
-      console.log("수정완료");
-      res.redirect("/page/1");
+
+  //예외처리
+  try {
+    if (req.file && !req.body.potoData) {
+      db.collection("post").updateOne(
+        { _id: parseInt(req.body.id) },
+        {
+          $set: {
+            제목: req.body.title,
+            내용: req.body.date,
+          },
+          $addToSet: {
+            image: req.file.path,
+            fileName: req.file.filename,
+          },
+        },
+        (error, result) => {
+          console.log("수정완료");
+          res.redirect("/page/1");
+        }
+      );
     }
-  );
+    if (req.body.potoData) {
+      db.collection("post").updateOne(
+        { _id: parseInt(req.body.id) },
+        {
+          $set: {
+            제목: req.body.title,
+            내용: req.body.date,
+            image: req.file.path,
+            fileName: req.file.filename,
+          },
+        },
+        (error, result) => {
+          console.log("수정완료");
+          res.redirect("/page/1");
+        }
+      );
+    }
+  } catch (error) {
+    if (error) {
+      db.collection("post").updateOne(
+        { _id: parseInt(req.body.id) },
+        { $set: { 제목: req.body.title, 내용: req.body.date } },
+        (error, result) => {
+          console.log("수정완료");
+          res.redirect("/page/1");
+        }
+      );
+    }
+  }
 };
 //수정
 
@@ -176,14 +225,27 @@ exports.post = (요청, 응답) => {
     console.log(res.totalPost);
     var total_post = res.totalPost;
 
-    var postValue = {
-      _id: total_post + 1,
-      제목: 요청.body.title,
-      내용: 요청.body.date,
-      작성자: 요청.user._id,
-      작성자ID: 요청.user.id,
-      작성날짜: time.format("YYYY-MM-DD HH:mm:ss"),
-    };
+    if (요청.file) {
+      var postValue = {
+        _id: total_post + 1,
+        제목: 요청.body.title,
+        내용: 요청.body.date,
+        작성자: 요청.user._id,
+        작성자ID: 요청.user.id,
+        작성날짜: time.format("YYYY-MM-DD HH:mm:ss"),
+        image: 요청.file.path,
+        fileName: 요청.file.filename,
+      };
+    } else {
+      var postValue = {
+        _id: total_post + 1,
+        제목: 요청.body.title,
+        내용: 요청.body.date,
+        작성자: 요청.user._id,
+        작성자ID: 요청.user.id,
+        작성날짜: time.format("YYYY-MM-DD HH:mm:ss"),
+      };
+    }
     //폼 태그에 입력시 id 값을  찾아 제목,내용 테이블에 데이터 기입
     db.collection("post").insertOne(postValue, (에러, 결과) => {
       console.log("저장완료");
@@ -211,7 +273,7 @@ exports.comments = (req, res) => {
 
   db.collection("commentcounter").findOne({ name: "댓글개수" }, (err, ret) => {
     var total_post = ret.totalComment;
-
+    var pages = req.body.cmdate;
     var Comments = {
       id: req.body.cmdate,
       _id: total_post + 1,
@@ -227,6 +289,8 @@ exports.comments = (req, res) => {
 
         { $inc: { totalComment: 1 } },
         (에러, 결과) => {
+          res.redirect("/detail/" + pages);
+
           if (에러) {
             return console.log("에러");
           }

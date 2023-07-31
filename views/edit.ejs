@@ -36,7 +36,12 @@
     <hr />
 
     <!-- 폼 박스 -->
-    <form class="titleBox" action="/edit?_method=PUT" method="post">
+    <form
+      class="titleBox"
+      action="/edit?_method=PUT"
+      method="post"
+      enctype="multipart/form-data"
+    >
       <div class="pBox mb-3">
         <!-- id 데이터값 보내주는 input 태그 -->
         <input
@@ -65,9 +70,15 @@
           id="exampleInputPassword1"
           name="date"
         />
+        <input
+          type="text"
+          value="<%= data.fileName %> "
+          name="potoData"
+          style="display: none"
+        />
       </div>
       <div class="mb-3">
-        <input class="form-control" type="file" id="formFile" />
+        <input class="form-control" type="file" id="formFile" name="image" />
       </div>
       <div class="submitBtn">
         <button type="submit" class="submitBtn btn btn-primary">수정</button>

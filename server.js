@@ -18,9 +18,26 @@ app.use(cookieParser());
 const storge = multer.diskStorage({
   destination: (req, file, cb) => {
     var time = dayjs();
-    cb(null, file.file.originalname + "test" + time);
+
+    cb(null, "./public/images");
   },
-  filename: () => {},
+  filename: (req, file, cb) => {
+    cb(null, `${Date.now()}_${file.originalname}`);
+  },
+});
+
+const upload = multer({
+  storage: storge,
+  fileFilter: (req, file, cb) => {
+    var ext = path.extname(file.originalname);
+    if (ext !== ".png" && ext !== ".jpg" && ext !== ".jpeg") {
+      return cb("png , jpg 파일이 아닙니다.");
+    }
+    cb(null, true);
+  },
+  limits: {
+    fileSize: 1024 * 1024,
+  },
 });
 
 app.use(
@@ -80,7 +97,7 @@ app.get("/detail/:id", borderapi.detailread);
 app.get("/edit/:id", borderapi.editPage);
 
 // 수정 api
-app.put("/edit", borderapi.editUpdate);
+app.put("/edit", upload.single("image"), borderapi.editUpdate);
 
 //로그인
 app.use("/login", require("./routes/homepage.js"));
@@ -116,7 +133,7 @@ function pageLogin(req, res, next) {
 app.use(require("./routes/loginrouter.js"));
 
 //글 작성 api
-app.post("/add", borderapi.post);
+app.post("/add", upload.single("image"), borderapi.post);
 //
 app.post("/mail", require("./routes/auth.js"));
 

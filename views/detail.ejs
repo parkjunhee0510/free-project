@@ -42,6 +42,8 @@
     <!-- 댓글 기능 -->
     <h4>제목 : <%= data.제목 %></h4>
     <h4>내용 : <%= data.내용 %></h4>
+    <img src="/images/<%=data.fileName%>" class="img-fluid" alt="..." onerror="this.style.display='none'">
+
     <hr />
        
     </form>
@@ -56,6 +58,7 @@
             class="commentdelete btn btn-danger"
             id="test1"
             data-id="<%= comment[i]._id%>"
+            onclick="reload()"
           >
             삭제
           </button>
@@ -84,6 +87,7 @@
             <span class="input-group-text">Comment</span>
             <textarea class="form-control" aria-label="With textarea" name="date"></textarea>
           <button
+            onclick="reload()"
             class="btn btn-outline-secondary"
             type="submit"
             id="button-addon2"
@@ -94,6 +98,6 @@
         <br><br>
         <h5>댓글 목록</h5>
      
-    <script src="/public/js/list.js"></script>
+    <script src="/js/list.js"></script>
   </body>
 </html>
