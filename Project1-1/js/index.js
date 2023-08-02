@@ -249,4 +249,12 @@ function pressBtn(){
    }
 }
 
+
+//댓글 엔터키 누를시 등록 버튼이 눌린것과 동일하게 작동하도록
+function submitOnEnter(event) {
+    if (event.key === "Enter") {
+        pressBtn();
+    }
+}
+
 btn.onclick = pressBtn;

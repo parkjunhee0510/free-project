@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/board-modification1.css"/>
+    <link rel="stylesheet" href="css/board-modification2.css"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Coummunity-revision</title>
+    <title>CoummunityUpload</title>
   </head>
   <body style="margin: 0px;">
         <!-- 헤더 로고 박스 -->
@@ -25,19 +25,17 @@
     </div>
       
 
-    <form action="/edit?_method=PUT" method="post">
+    <form action="" method="">
+    <!-- <form action="/edit?_method=PUT" method="post"> -->
+        <button class="UploadBtn">등록</button>
         <div class="mb-3">
-          <div class="write">
-            <p style="color: black;">게시글title</p>
-          </div>
+            <input class="write" type="text"  placeholder="제목"></input>
+        
         
           
-          <!-- id 데이터값 보내주는 input 태그 -->
-          <input type="text" name="id" style="display: none;" value="20 ">
-          
             <!-- id 데이터값 보내주는 input 태그 -->
-          
-          
+            <input type="text" name="id" style="display: none;" value="20 ">
+            <!-- id 데이터값 보내주는 input 태그 -->
         </div>
         <!--이미지,내용 박스-->
         <div class="image-bigbox">
@@ -67,18 +65,18 @@
         </div> -->
         
        <!-- 댓글 -->
-      <div id="form-commentInfo">
+      <!-- <div id="form-commentInfo">
                 <div id="comment-count">댓글 <span id="count">0</span></div>
-                <input id="comment-input" placeholder="댓글을 입력해 주세요." onkeydown="submitOnEnter(event)">
+                <input id="comment-input" placeholder="댓글을 입력해 주세요.">
                 <button type="button" id="submit">등록</button>
             </div>
             <div id=comments>
         
-            </div>
+            </div> -->
 
         <!-- 다음 게시물 -->
         
-        <div>
+        <!-- <div>
 
           <div>
             <div class="board_list">
@@ -111,13 +109,13 @@
         </div>
         <div class="div-category">
           <button class="post-category">글 목록</button>
-        </div>
+        </div> -->
       </form>
 
 
 
 
   
-      <script src="js/index.js"></script>
+     
   </body>
 </html>

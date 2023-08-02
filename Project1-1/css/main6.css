@@ -1,3 +1,10 @@
+/* body {
+  background-color: gray;
+} */
+
+
+
+
 li {
     list-style: none;
   }
@@ -105,14 +112,18 @@ li {
   
   /* 배너 코드 */
   .banner-container {
-    width: 100vw;
-    height: 400px;
+    width: 90%;
+    height: 1400px;
     overflow: hidden;
     position: relative;
     top: 0;
+    object-fit: cover;
+    margin-left: 5%;
+    margin-top: 100px;
+    margin-bottom: 100px;
   }
   .banner {
-    width: calc(100vw * 4);
+    width: calc(100% * 4);
     height: 100%;
     display: flex;
     animation: animation1 10s infinite;
@@ -122,21 +133,37 @@ li {
     -ms-transition: all 0.5s cubic-bezier(1, 0.01, 0.32, 1);
     transition: all 0.5s cubic-bezier(1, 0.01, 0.32, 1);
   }
+
+
   .banner > div {
-    width: 100vw;
+    width: 100%;
     height: 100%;
+    background-size: cover;
+    filter: grayscale(0) blur(0);
+    filter: grayscale(0) blur(0);
+    transition: 0.3s ease-in-out;
   }
+.banner > div:hover {
+  filter: grayscale(100%) blur(3px);
+  filter: grayscale(100%) blur(3px);
+}
+
+
   .banner > div:nth-child(1) {
-    background-color: #2e4559;
+    background-image: url(beer.png);
+    cursor: pointer;
   }
   .banner > div:nth-child(2) {
-    background-color: #4a6d8c;
+    background-image: url(community.png);
+    cursor: pointer;
   }
   .banner > div:nth-child(3) {
-    background-color: #6a8aa6;
+    background-image: url( test.jpg);
+    cursor: pointer;
   }
   .banner > div:nth-child(4) {
-    background-color: #a9c6d9;
+    background-image: url( test1.gif);
+    cursor: pointer;
   }
   
   @keyframes animation1 {
@@ -259,24 +286,24 @@ li {
   /* 배너 코드 */
   
   /* 중간 배너 */
-  
+/*   
   #middle-banner-container {
-    width: 100%;
-    height: 650px;
+    width: 1400;
+    height: 4000px;
     background-color: white;
     object-fit: cover;
   }
   
   .middle-item-container-right {
     width: 50%;
-    height: 450px;
+    height: 2000px;
     background-color: #a9c6d9;
     float: right;
   }
   
   figure {
     width: 100%;
-    height: 550px;
+    height: 2000px;
     margin: 0;
     padding: 0;
     background: darkcyan;
@@ -296,5 +323,5 @@ li {
     filter: grayscale(100%) blur(3px);
     filter: grayscale(100%) blur(3px);
   }
-  
+   */
   /* 중간 배너 */
