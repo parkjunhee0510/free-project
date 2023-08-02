@@ -14,7 +14,7 @@
       integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" type="text/css" href="/style/main.css" />
+    <link rel="stylesheet" type="text/css" href="/style/bordertest.css" />
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   </head>
   <body>
@@ -31,7 +31,7 @@
     <hr />
     <nav id="navbar">
       <ul>
-        <li><a class="menuLink" href="/list">게시판</a></li>
+        <li><a class="menuLink" href="/page/1">게시판</a></li>
         <li><a class="menuLink" href="#">메뉴2</a></li>
         <li><a class="menuLink" href="#">메뉴3</a></li>
         <li><a class="menuLink" href="#">메뉴4</a></li>
@@ -40,29 +40,40 @@
     <hr />
 
     <!-- 폼 박스 -->
-    <form action="/add" method="post">
-      <div class="mb-3">
+    <form
+      action="/add"
+      method="post"
+      class="titleBox"
+      enctype="multipart/form-data"
+    >
+      <div class="pBox mb-3">
         <label for="exampleInputEmail1" class="form-label">제목</label>
         <input
           type="text"
-          class="form-control"
+          class="test form-control"
           id="exampleInputEmail1"
           aria-describedby="emailHelp"
           name="title"
         />
       </div>
-      <div class="mb-3">
+      <div class="pBox mb-3">
         <label for="exampleInputPassword1" class="form-label">내용</label>
         <input
           type="text"
-          class="form-control"
+          class="test1 form-control"
           id="exampleInputPassword1"
           name="date"
         />
       </div>
-      <button type="submit" class="btn btn-primary">
-        <a href="/list">Submit</a>
-      </button>
+      <div class="mb-3">
+        <input class="form-control" type="file" id="formFile" name="image" />
+      </div>
+      <div class="submitBtn">
+        <button type="submit" class="btn btn-primary" onclick=" moveList()">
+          글 쓰기
+        </button>
+      </div>
     </form>
+    <script src="/public/js/list.js"></script>
   </body>
 </html>

@@ -10,102 +10,79 @@
       integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
       crossorigin="anonymous"
     />
-    <link href="css/main.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="/style/bordertest.css" />
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   </head>
-  <body>
-    
-    <nav class="navbar navbar-expand-lg bg-light">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Dropdown
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><hr class="dropdown-divider" /></li>
-                <li>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled">Disabled</a>
-            </li>
-          </ul>
-          <form class="d-flex" role="search">
-            <input
-              class="form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button class="btn btn-outline-success" type="submit">
-              Search
-            </button>
-          </form>
-        </div>
-      </div>
+  <body style="margin: 0px">
+    <div id="hader-navbar-container">
+      <ul>
+        <li><a href="/">home</a></li>
+        <li><a href="/mypage">내 정보</a></li>
+      </ul>
+    </div>
+    <div class="header-box">
+      <h3><span>ALCOHOL</span> FREE</h3>
+      <p>test</p>
+    </div>
+    <hr />
+    <nav id="navbar">
+      <ul>
+        <li><a class="menuLink" href="/page/1">게시판</a></li>
+        <li><a class="menuLink" href="#">메뉴2</a></li>
+        <li><a class="menuLink" href="#">메뉴3</a></li>
+        <li><a class="menuLink" href="#">메뉴4</a></li>
+      </ul>
     </nav>
+    <hr />
 
     <!-- 폼 박스 -->
-    <form action="/edit?_method=PUT" method="post">
-      <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">제목</label>
-        
+    <form
+      class="titleBox"
+      action="/edit?_method=PUT"
+      method="post"
+      enctype="multipart/form-data"
+    >
+      <div class="pBox mb-3">
         <!-- id 데이터값 보내주는 input 태그 -->
-        <input type="text" name="id" style="display: none;" value="<%= data._id %> ">
+        <input
+          type="text"
+          name="id"
+          style="display: none"
+          value="<%= data._id %> "
+        />
         <!-- id 데이터값 보내주는 input 태그 -->
-
+        <p>제목</p>
         <input
           value="<%= data.제목 %>"
           type="text"
-          class="form-control"
+          class="test form-control"
           id="exampleInputEmail1"
           aria-describedby="emailHelp"
           name="title"
         />
-        
       </div>
-      <div class="mb-3">
-        <label for="exampleInputPassword1" class="form-label">내용</label>
+      <div class="pBox mb-3">
+        <p>내용</p>
         <input
           value="<%= data.내용 %>"
           type="text"
-          class="form-control"
+          class="test1 form-control"
           id="exampleInputPassword1"
           name="date"
         />
+        <input
+          type="text"
+          value="<%= data.fileName %> "
+          name="potoData"
+          style="display: none"
+        />
       </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <div class="mb-3">
+        <input class="form-control" type="file" id="formFile" name="image" />
+      </div>
+      <div class="submitBtn">
+        <button type="submit" class="submitBtn btn btn-primary">수정</button>
+      </div>
     </form>
-
-    
   </body>
 </html>

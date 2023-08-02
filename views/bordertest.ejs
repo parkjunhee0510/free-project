@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style/bordertest.css"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Coummunity-revision</title>
+  </head>
+  <body style="margin: 0px;">
+        <!-- 헤더 로고 박스 -->
+    <div id="hader-navbar-container">
+        <ul>
+          <li><a href="login.html">로그인</a></li>
+          <li><a href="sing-up.html">회원가입</a></li>
+          <li><a href="user-info.html">내 정보</a></li>
+        </ul>
+    </div>
+    <div class="header-box">
+        <!-- <div class="logo-container">
+            <img src="css/test1.gif" alt="로고" class="logo-img">  //logo-container div삭제
+        </div> -->
+        <h3 onclick="window.location.href='main6.html'"><span>ALCOHOL</span> FREE</h3> 
+        <p>FREE</p>
+    </div>
+      
+
+    <form action="/edit?_method=PUT" method="post">
+        <div class="mb-3">
+          <div class="write">
+            <p style="color: black;">게시글title</p>
+          </div>
+        
+          
+          <!-- id 데이터값 보내주는 input 태그 -->
+          <input type="text" name="id" style="display: none;" value="20 ">
+          
+            <!-- id 데이터값 보내주는 input 태그 -->
+          
+          
+        </div>
+        <!--이미지,내용 박스-->
+        <div class="image-bigbox">
+        <!-- 이미지 -->
+        <div><img class="revision-img" src="css/test.jpg">
+          <button class="img-re-upload">이미지 수정</button>
+
+        </div>
+        
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label"></label>
+          <input value="content" type="text" class="form-control" id="exampleInputPassword1" name="date">
+          
+        </div>
+        </div>
+        <!-- 수정버튼 -->
+       
+        
+
+        <!-- 0726 chat 수정 전 -->
+
+        <!-- 댓글/ 작성 버튼 -->
+        <!-- <div class="chat">
+          <input type="text" class="chat-input" value="댓글">
+          <button class="chat-button">작성</button>
+          <button type="submit" class="chat-button">수정</button>
+        </div> -->
+        
+       <!-- 댓글 -->
+      <div id="form-commentInfo">
+                <div id="comment-count">댓글 <span id="count">0</span></div>
+                <input id="comment-input" placeholder="댓글을 입력해 주세요.">
+                <button type="button" id="submit">등록</button>
+            </div>
+            <div id=comments>
+              <p>???</p>
+            </div>
+
+        <!-- 다음 게시물 -->
+        
+        <div>
+
+          <div>
+            <div class="board_list">
+
+                
+              
+
+                <div>
+                    <div class="num">3</div>
+                    <div class="title"><p style="color: black;">제목이 들어갑니다</p></div>
+                    <div class="writer">김이름</div>
+                    <div class="date">2021.1.15</div>
+                    <div class="count">33</div>
+                </div>
+                <div>
+                    <div class="num">2</div>
+                    <div class="title"><p style="color: black;">제목이 들어갑니다</p></div>
+                    <div class="writer">김이름</div>
+                    <div class="date">2021.1.15</div>
+                    <div class="count">33</div>
+                </div>
+                <div>
+                    <div class="num">1</div>
+                    <div class="title"><p style="color: black;">제목이 들어갑니다</p></div>
+                    <div class="writer">김이름</div>
+                    <div class="date">2021.1.15</div>
+                    <div class="count">33</div>
+                </div>
+            </div>
+        </div>
+        <div class="div-category">
+          <button class="post-category">글 목록</button>
+        </div>
+      </form>
+
+
+
+
+  
+      <script src="js/index.js"></script>
+  </body>
+</html>

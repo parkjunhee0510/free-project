@@ -10,18 +10,19 @@
       integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
       crossorigin="anonymous">
       <link rel="stylesheet" type="text/css" href="/style/main.css">
+      <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     </head>
     <body>
       <div class="header-box">
           <h3><span>ALCOHOL</span> FREE</h3>
           <p></p>
           <button class="navbtn">Login</a></button> 
-          <p>시발</p>
+          <p>test</p>
         </div>
         <hr />
         <nav id="navbar">
           <ul>
-            <li><a class="menuLink" href="/list">글 목록</a></li>
+            <li><a class="menuLink" href="/page/1">글 목록</a></li>
             <li><a class="menuLink" href="#">메뉴2</a></li>
             <li><a class="menuLink" href="#">메뉴3</a></li>
             <li><a class="menuLink" href="#">메뉴4</a></li>
@@ -39,24 +40,12 @@
     <ul class="list-group">
       <% for (var i = 0; i < posts.length; i++){ %>
       <li class="list-group-item">
-        <p>글 번호 : <%= posts[i]._id %></p>
-        <h4>할일 제목 : ? <%= posts[i].제목 %></h4>
-        <p>할일 마감 날짜 : <%= posts[i].내용 %></p>
+        <h4><%= posts[i].제목 %></h4>
+        <p><%= posts[i].내용 %></p>
         <button class="delete btn btn-danger" data-id="<%= posts[i]._id%>">삭제</button>
       </li>
       <% } %>
     </ul>
-
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-
-    <!-- ajax 를 활용한 서버에 삭제 요청 보내기 -->
-    <script>
-      $('#search').click(() => { 
-        var searchValue = $('#search-input').val();
-        window.location.replace('/search?value=' + searchValue) //URL query string
-      }) 
-
-    </script>
-
+    <script src= "../public/js/list.js"></script>
   </body>
 </html>

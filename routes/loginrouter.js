@@ -15,7 +15,7 @@ router.post(
     //인증 성공시 home으로 이동
 
     //쿠키생성
-    res.cookie("user", { userid: req.body.id });
+    res.cookie("user", req.body.id);
     res.redirect("/");
   }
 );
@@ -26,6 +26,10 @@ router.get("/logout", (req, res, next) => {
   //쿠키 삭제
   res.cookie("user", "", { maxAge: 0 });
   res.redirect("/");
+});
+
+router.get("/emailSignup", (req, res) => {
+  res.render("emailSignUp.ejs");
 });
 
 passport.use(

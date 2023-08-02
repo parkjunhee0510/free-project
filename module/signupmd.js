@@ -4,8 +4,39 @@ const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
 const session = require("express-session");
 const bcrypt = require("bcrypt");
+const { smtpTransport } = require("./email");
 
 const connect = require("./db_conn.js");
+
+var generateRandomNumber = function (min, max) {
+  var ranNum = Math.floor(Math.random() * (max - min + 1)) + min;
+  return ranNum;
+};
+
+exports.emailAuth = async (req, res) => {
+  const number = generateRandomNumber(111111, 999999);
+
+  const { email } = req.body; //사용자가 입력한 이메일
+
+  const mailOptions = {
+    from: "junhee5143@naver.com ", // 발신자 이메일 주소.
+    to: email, //사용자가 입력한 이메일 -> 목적지 주소 이메일
+    subject: " 인증 관련 메일 입니다. ",
+    html: "<h1>인증번호를 입력해주세요 \n\n\n\n\n\n</h1>" + number,
+  };
+  smtpTransport.sendMail(mailOptions, (err, response) => {
+    console.log("response", response);
+    //첫번째 인자는 위에서 설정한 mailOption을 넣어주고 두번째 인자로는 콜백함수.
+    if (err) {
+      res.json({ ok: false, msg: " 메일 전송에 실패하였습니다. " });
+      smtpTransport.close(); //전송종료
+      return;
+    } else {
+      smtpTransport.close(); //전송종료
+      res.render("signup.ejs", { emailToken: email });
+    }
+  });
+};
 
 //회원가입 api
 exports.signup = (req, res) => {
@@ -19,8 +50,11 @@ exports.signup = (req, res) => {
       db.collection("login").insertOne(
         {
           name: req.body.name,
+          nickName: req.body.nickName,
           id: req.body.id,
           pw: userpw,
+          myPost: 0,
+          myCommentPost: 0,
         },
         (err, result) => {
           res.redirect("/");
