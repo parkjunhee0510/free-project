@@ -1,0 +1,218 @@
+body {
+  background-color: rgb(255, 255, 255);
+}
+
+#hader-navbar-container {
+  width: 100%;
+  height: 20px;
+}
+
+#hader-navbar-container ul {
+  float: right;
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+#hader-navbar-container a {
+  display: block;
+  text-align: center;
+  margin: 0.25rem;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
+}
+
+#hader-navbar-container a:hover {
+  background: yellowgreen;
+}
+
+.header-box {
+  margin-top: 30px;
+  width: 100%;
+  background-color: white;
+  border: 2px solid gray;
+  border-radius: 5px;
+  padding: 1px;
+  text-align: center;
+}
+
+.header-box h3 {
+  margin-top: 20px;
+  margin-bottom: -13px;
+  margin-left: 30px;
+  font-size: 40px;
+  color: rgb(63, 28, 28);
+}
+
+.header-box p {
+  margin-left: 30px;
+  font-size: 17px;
+  color: rgb(65, 54, 54);
+}
+
+.header-box span {
+  display: inline-block;
+  width: 160px;
+  color: white;
+  background-color: black;
+  font-family: fantasy;
+}
+
+#navbar {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 55px;
+}
+
+#navbar ul {
+  display: flex;
+  margin-left: -40px;
+  width: 100%;
+  height: 80%;
+}
+
+#navbar ul li {
+  border-left: 1px solid rgb(5, 5, 5);
+  width: 100%;
+  line-height: 40px;
+  color: white;
+  background-color: rgba(2, 2, 0, 0.705);
+  text-align: center;
+  list-style: none;
+}
+
+#navbar .menuLink {
+  text-decoration: none;
+  color: whitesmoke;
+  display: block;
+  width: 100%;
+  height: 100%;
+  font-size: 12px;
+  font-weight: bold;
+  font-family: "Trebuchet MS";
+}
+
+#navbar ul :hover {
+  background-color: yellowgreen;
+  color: black;
+}
+
+.menu {
+  margin: auto;
+  width: 240px;
+  height: 400px;
+  float: left;
+}
+
+.user-img {
+  background-image: url(../css/test1.gif);
+  background-size: cover;
+  border-radius: 70%;
+  width: 100%;
+  height: 60%;
+}
+
+@media screen and (max-width: 600px) {
+  div {
+    display: block;
+  }
+
+  li {
+    display: block;
+  }
+}
+
+.menu ul {
+  text-align: center;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(228, 220, 220);
+  overflow: auto;
+}
+
+.menu li a {
+  display: block;
+  color: rgb(44, 65, 83);
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.menu li a.active {
+  background-color: #555;
+  color: white;
+}
+
+.sub-menu {
+  margin-top: 100px;
+  margin-left: 240px;
+  float: left;
+  width: 45%;
+  height: 302px;
+  background-color: #866666;
+}
+
+.sub-menu ul {
+  text-align: left;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(228, 220, 220);
+  border: 3px solid rgb(172, 152, 152);
+  border-radius: 5px;
+  overflow: auto;
+}
+
+.li-header {
+  text-align: left;
+  height: 50px;
+  display: block;
+  color: white;
+  background-color: #2f2f2f;
+}
+
+.li-header > span > a {
+  margin-top: 0px;
+  margin-bottom: 40px;
+  margin-left: 10px;
+  font-size: 25px;
+  font-family: fantasy;
+  font-style: initial;
+  color: white;
+}
+
+.sub-menu li {
+  line-height: 60px;
+  border: 1px solid white;
+  display: block;
+  color: darkblue;
+  padding: 8px 16px;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 25px;
+}
+
+.sub-menu li span {
+  font-family: fantasy;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+.sub-menu li span:hover {
+  color: black;
+  background-color: yellowgreen;
+}
+
+.sub-menu li a span {
+  line-height: 50px;
+  float: right;
+  margin-right: 15px;
+}
