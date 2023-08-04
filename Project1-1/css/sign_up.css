@@ -1,6 +1,11 @@
 body {
-    background-image: url(Sign_up_background.png);
-    position:relative;
+    background-image: url(splash.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: black;
+    background-position-y:250px;
+    /* position:relative; */
 }
 li {
     list-style: none;
@@ -14,7 +19,7 @@ li {
 
 
 
-/*여기서*/
+/*                로고 이미지 스페이스
   .logo-container {
     text-align: center;
   }
@@ -23,7 +28,7 @@ li {
     max-width: 200px;
     height: 150px;
   }
-  /*여까지 삭제*/
+   */
 
 
   #hader-navbar-container ul {

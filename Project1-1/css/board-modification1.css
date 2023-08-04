@@ -1,6 +1,7 @@
 /* 바디 백그라운드 날릴거 */
 body {
-    background-color: lightblue;
+    background-image: url(moonNStar.jpg);
+
     }
     
     li {
