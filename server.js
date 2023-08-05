@@ -66,6 +66,7 @@ app.use(express.static(path.join(__dirname, "public")));
 const borderapi = require("./module/bordermodule.js");
 const loginapi = require("./module/signupmd.js");
 const connect = require("./module/db_conn.js");
+const MyPage = require("./module/profile.js");
 
 app.use(bodyParser.urlencoded({ extends: true }));
 const port = 8080;
@@ -155,7 +156,13 @@ app.get("/test2/:id", borderapi.editPage);
 app.delete("/commentdelete", borderapi.commentdelete);
 //
 
-//댓글 수정
-app.post("/commentedit", borderapi.commentEditUpdate);
-//댓글 수정
+//
 app.get("/emailSignUp", require("./routes/loginrouter.js"));
+//
+
+//유저가 작성한 글
+app.get("/MyPostList/:page", MyPage.MyListPage);
+//
+
+//유저가 작성한 댓글
+app.get("/MyCommentList", MyPage.commentPostList);

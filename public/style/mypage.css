@@ -76,7 +76,7 @@ div.portfoliocard div.right_col h3.location {
   font-weight: 300;
   color: rgba(170, 170, 170, 1);
   padding: 0;
-  margin: -5px 10px 10px 30px;
+  margin: -3px 10px 10px 30px;
 }
 div.portfoliocard ul.contact_information {
   margin-top: 20px;
@@ -173,7 +173,6 @@ div.portfoliocard div.follow_count {
   background-size: 300% 100%;
 
   border-radius: 50px;
-  moz-transition: all 0.4s ease-in-out;
   -o-transition: all 0.4s ease-in-out;
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
@@ -181,7 +180,6 @@ div.portfoliocard div.follow_count {
 
 .btn-hover:hover {
   background-position: 100% 0;
-  moz-transition: all 0.4s ease-in-out;
   -o-transition: all 0.4s ease-in-out;
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
@@ -200,4 +198,9 @@ div.portfoliocard div.follow_count {
     #2bb673
   );
   box-shadow: 0 4px 15px 0 rgba(49, 196, 190, 0.75);
+}
+
+a {
+  text-decoration: none;
+  color: rgba(140, 140, 140, 1);
 }

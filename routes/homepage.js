@@ -23,6 +23,8 @@ router.get("/signup", (req, res) => {
   res.render("signup.ejs");
 });
 
+router.get("/postList", (req, res) => {});
+
 //내 정보
 router.get("/mypage", pageLogin, (req, res) => {
   //passport.deserializeUser 에서 넘겨받은 db 콘솔로그 출력 확인

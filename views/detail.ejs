@@ -11,31 +11,29 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" type="text/css" href="/style/detail.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   </head>
   <body>
     <div id="hader-navbar-container">
       <ul>
         <li><a href="/">home</a></li>
-        <li><a href="/login">로그인</a></li>
-        <li><a href="/signup">회원가입</a></li>
         <li><a href="/mypage">내 정보</a></li>
       </ul>
     </div>
     <div class="header-box">
-      <h3><span>ALCOHOL</span> FREE</h3>
-      <p>test</p>
+      <a href="/">achool free</a>
+      <br /><br /><br /><br />
     </div>
-    <hr />
     <nav id="navbar">
-      <ul>
+      <ul class="navbar-link">
         <li><a class="menuLink" href="/page/1">게시판</a></li>
         <li><a class="menuLink" href="#">메뉴2</a></li>
         <li><a class="menuLink" href="#">메뉴3</a></li>
         <li><a class="menuLink" href="#">메뉴4</a></li>
       </ul>
     </nav>
-    <hr />
+    <br /><br /><br /><br />
     <!-- <div class="middle-menu">
       </div> -->
 
@@ -55,7 +53,7 @@
     <table class="table table-bordered">
       <% for (var i = 0; i < comment.length; i++){ %> <% if(id == comment[i].id)
       { %>
-        <td><p> <span id="commentFont">작성자 :   <%= comment[i].작성자 %></span>  </p></td>
+        <td><p> <span id="commentFont">작성자 :   <%= comment[i].nickName %></span>  </p></td>
         <td class="tdBox"><p id="commentFont2"><span id="commentFont3"><%= comment[i].작성내용 %></span>  <span class="dayRight">작성날짜 <%= comment[i].작성날짜 %></span></p></td>
         <td><% if(comment[i].작성자 == usercookie) { %>
           <div class="btnBox"> 
@@ -63,7 +61,6 @@
             class="commentdelete btn btn-danger"
             id="test1"
             data-id="<%= comment[i]._id%>"
-            onclick="reload()"
           >
             삭제
           </button>
@@ -73,13 +70,11 @@
         </td>
       </tr>
       <% } %> <% } %>
-      <button onclick="moveList()">글 목록</button>
-      
       <hr><br><br>
 
       <% if(usercookie) { %>
-      <form action="/comment" method="post">
-        <div class="input-group mb-3">
+      <form action="/comment" method="post" class="comment-box">
+        <div class="boxBox input-group mb-3">
           <br />
           <input
             type="text"
@@ -96,7 +91,7 @@
             type="submit"
             id="button-addon2"
           >
-            댓글작성
+            <span>댓글작성</span>
           </button>
           <% } %>
         </div>

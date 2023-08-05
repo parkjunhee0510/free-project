@@ -1,7 +1,8 @@
+html,
 body {
-  background-image: url(Sign_up_background.png);
-  position: relative;
+  background: #222;
 }
+
 li {
   list-style: none;
 }
@@ -10,17 +11,6 @@ li {
   width: 100%;
   height: 20px;
 }
-
-/*여기서*/
-.logo-container {
-  text-align: center;
-}
-
-.logo-img {
-  max-width: 200px;
-  height: 150px;
-}
-/*여까지 삭제*/
 
 #hader-navbar-container ul {
   float: right;
@@ -37,7 +27,7 @@ li {
   padding: 0.5rem 1rem;
   text-decoration: none;
   font-weight: bold;
-  color: yellowgreen;
+  color: #fff;
 }
 
 #hader-navbar-container a:hover {
@@ -48,8 +38,6 @@ li {
 .header-box {
   margin-top: 30px;
   width: 100%;
-  background-color: white;
-  border: 2px solid gray;
   border-radius: 5px;
   /* background-image: url(../layout.png); */
   padding: 1px;
@@ -100,11 +88,11 @@ li {
 }
 
 #navbar ul li {
-  border-left: 1px solid rgb(5, 5, 5);
+  border-left: 1px solid rgba(5, 5, 5, 0.5);
   width: 100%;
   line-height: 50px;
   color: white;
-  background-color: rgba(2, 2, 0, 0.705);
+  background-color: rgba(2, 2, 0, 0.301);
   text-align: center;
 }
 
@@ -121,7 +109,6 @@ li {
 
 #navbar ul :hover {
   background-color: gray;
-  color: black;
 }
 
 li {
@@ -137,6 +124,7 @@ a {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  border-bottom: 1px solid;
 }
 
 .listBox a {
@@ -144,13 +132,108 @@ a {
 }
 
 .pagination {
+  margin-top: 20px;
+  margin-left: 8px;
   color: black;
 }
 
 .pagination a {
-  color: black;
+  color: #fff;
+  border: 1px solid black;
+  background-color: #222;
+  font-family: Audiowide;
+  animation: neon2 3s ease-in-out infinite alternate;
 }
 
 .pageListBox {
   text-align: center;
+}
+
+.header-box a {
+  text-align: center;
+  font-size: 7em;
+  margin-bottom: 0;
+  margin-top: 0;
+  line-height: 1;
+  text-decoration: none;
+  color: #fff;
+}
+
+.input-box {
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+  margin-top: -120px;
+  margin-bottom: -50px;
+  height: 150px;
+}
+
+.header-box a:nth-child(1) {
+  font-family: Monoton;
+  animation: neon1 1.5s ease-in-out infinite alternate;
+}
+
+.navbar-link a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.navbar-link a:nth-child(1) {
+  font-family: Audiowide;
+  animation: neon5 1.5s ease-in-out infinite alternate;
+}
+
+.list-group-item {
+  background-color: #222;
+}
+
+.list-group-item a {
+  text-decoration: none;
+  color: #fff;
+}
+.list-group-item a:nth-child(1) {
+  font-family: Audiowide;
+  animation: neon1 1.5s ease-in-out infinite alternate;
+}
+.profile-box p {
+  text-decoration: none;
+  color: #fff;
+}
+
+.profile-box p:nth-child(1) {
+  font-family: Audiowide;
+  animation: neon2 3s ease-in-out infinite alternate;
+}
+
+@keyframes neon1 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff1177,
+      0 0 70px #ff1177, 0 0 80px #ff1177, 0 0 100px #ff1177, 0 0 150px #ff1177;
+  }
+  to {
+    text-shadow: 0 0 8px #fff, 0 0 10px #fff, 0 0 25px #fff, 0 0 30px #ff1177,
+      0 0 65px #ff1177, 0 0 70px #ff1177, 0 0 90px #ff1177, 0 0 135px #ff1177;
+  }
+}
+
+@keyframes neon2 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff5500,
+      0 0 70px #ff5500, 0 0 80px #ff5500, 0 0 100px #ff5500, 0 0 150px #ff5500;
+  }
+  to {
+    text-shadow: 0 0 8px #fff, 0 0 10px #fff, 0 0 25px #fff, 0 0 30px #ff5500,
+      0 0 65px #ff5500, 0 0 70px #ff5500, 0 0 90px #ff5500, 0 0 135px #ff5500;
+  }
+}
+
+@keyframes neon5 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff9900,
+      0 0 70px #ff9900, 0 0 80px #ff9900, 0 0 100px #ff9900, 0 0 150px #ff9900;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff9900,
+      0 0 35px #ff9900, 0 0 40px #ff9900, 0 0 50px #ff9900, 0 0 75px #ff9900;
+  }
 }

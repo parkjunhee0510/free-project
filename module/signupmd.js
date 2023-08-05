@@ -46,15 +46,15 @@ exports.signup = (req, res) => {
     if (result) {
       return console.log("중복체크 테스트");
     } else {
-      const userpw = bcrypt.hashSync(req.body.pw, 5);
+      const userpw = bcrypt.hashSync(req.body.pw, 5); //bycrypt 를 이용한 패스워드 암호화
       db.collection("login").insertOne(
         {
-          name: req.body.name,
-          nickName: req.body.nickName,
-          id: req.body.id,
-          pw: userpw,
-          myPost: 0,
-          myCommentPost: 0,
+          name: req.body.name, //사용자 이름
+          nickName: req.body.nickName, //사용자 닉네임
+          id: req.body.id, //사용자 ID
+          pw: userpw, //사용자 패스워드
+          myPost: 0,  //마이페이지 내가 쓴 글
+          myCommentPost: 0, //마이페이지 내가 쓴 댓글
         },
         (err, result) => {
           res.redirect("/");
@@ -76,25 +76,29 @@ exports.login = passport.use(
     },
     function (UserId, UserPw, done) {
       //console.log(입력한아이디, 입력한비번);
+      if (db.collection("login").findOne({ id: UserId })) {
+        console.log("테스트");
+      }
       db.collection("login").findOne({ id: UserId }, function (error, result) {
         //로그인 여부에 따른 출력방법
 
         //암호화한 패스워드 복호화 과정 똑같을시 same 에 true 값이 반영됨
         const same = bcrypt.compareSync(UserPw, result.pw);
         if (error) {
-          return done(error);
+          console.log("로그인 실패");
+          return done(null, false, { message: "존재하지않는 아이디 입니다." });
         }
 
         if (!result) {
           console.log("로그인 실패");
-          return done(null, false, { message: "존재하지않는 아이디요" });
+          return done(null, false, { message: "존재하지않는 아이디 입니다." });
         }
         //same에 true 값 있을시 로그인 성공
         if (same) {
           return done(null, result);
         } else {
           console.log("비밀번호 오류", result.pw);
-          return done(null, false, { message: "비번틀렸어요" });
+          return done(null, false, { message: "비밀번호가 틀렸습니다." });
         }
       });
     }

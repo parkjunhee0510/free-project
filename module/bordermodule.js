@@ -36,21 +36,12 @@ exports.pagetest = (req, res) => {
     .limit(limit)
     .toArray((error, result) => {
       db.collection("counter").findOne({ name: "게시물갯수" }, (err, ret) => {
-        console.log(ret.totalPost);
-        var total_post = ret.totalPost;
-        try {
-          if (ret) {
-            console.log(page);
-            console.log(req.params.page);
-            res.render("page.ejs", {
-              posts: result,
-              page,
-              usercookie: req.cookies.user,
-              totalPost: ret.totalPost,
-            });
-          }
-        } catch (err) {
-          next(err);
+        if (ret) {
+          res.render("page.ejs", {
+            posts: result,
+            usercookie: req.cookies.user,
+            realPost: ret.realPost,
+          });
         }
         //
       });
@@ -61,19 +52,16 @@ exports.pagetest = (req, res) => {
 
 //삭제
 exports.delete = (req, res) => {
-  console.log(req.body._id);
-
   //id 값은 int형식임으로 parseInt 함수로 이용하여 int로 변환 시켜줌
   req.body._id = parseInt(req.body._id);
   var deleteData = { _id: req.body._id, 작성자: req.user._id };
-  console.log(req.body._id);
 
   //db id데이터 값을 찾아 삭제
   db.collection("post").deleteOne(deleteData, (error, result) => {
     console.log("삭제완료");
     db.collection("counter").updateOne(
       { name: "게시물갯수" },
-      { $inc: { totalPost: -1 } },
+      { $inc: { realPost: -1 } },
       (err, ret) => {
         db.collection("login").updateOne(
           { id: req.user.id },
@@ -96,13 +84,11 @@ exports.delete = (req, res) => {
 
 //댓글삭제
 exports.commentdelete = (req, res) => {
-  console.log(req.body._id);
   var pages = req.body.cmdate;
 
   //id 값은 int형식임으로 parseInt 함수로 이용하여 int로 변환 시켜줌
   req.body._id = parseInt(req.body._id);
   var deleteData = { _id: req.body._id, 작성자: req.user.id };
-  console.log(req.body._id);
 
   //db id데이터 값을 찾아 삭제
   db.collection("Comments").deleteOne(deleteData, (error, result) => {
@@ -110,22 +96,16 @@ exports.commentdelete = (req, res) => {
 
     //res.status (200) 는 성공적으로 실행했다는 신호 200은 성공 400은 에러코드
     if (result) {
-      db.collection("counter").updateOne(
-        { name: "댓글갯수" },
-        { $inc: { totalPost: -1 } },
-        (err, ret) => {
-          db.collection("login").updateOne(
-            { id: req.user.id },
-            { $inc: { myCommentPost: -1 } },
-            (에러, 결과) => {
-              if (에러) return console.log("에러");
-            }
-          );
-          if (error) {
-            return console.log("에러");
-          }
+      db.collection("login").updateOne(
+        { id: req.user.id },
+        { $inc: { myCommentPost: -1 } },
+        (에러, 결과) => {
+          if (에러) return console.log("에러");
         }
       );
+      if (error) {
+        return console.log("에러");
+      }
       res.redirect("/detail/" + pages);
     } else {
       return res.status(400).send({ message: "실패" });
@@ -136,7 +116,6 @@ exports.commentdelete = (req, res) => {
 
 //검색
 exports.search = (req, res) => {
-  console.log(req.query.value);
   var Search = [
     {
       $search: {
@@ -152,8 +131,7 @@ exports.search = (req, res) => {
   db.collection("post")
     .aggregate(Search)
     .toArray((err, result) => {
-      console.log(result);
-      res.render("search.ejs", { posts: result });
+      res.render("search.ejs", { posts: result, usercookie: req.cookies.user });
     });
 };
 //검색
@@ -164,7 +142,6 @@ exports.editPage = (req, res) => {
   db.collection("post").findOne(
     { _id: parseInt(req.params.id) },
     (error, result) => {
-      console.log(result);
       res.render("edit.ejs", { data: result });
     }
   );
@@ -190,7 +167,6 @@ exports.editUpdate = (req, res) => {
           },
         },
         (error, result) => {
-          console.log("수정완료");
           res.redirect("/page/1");
         }
       );
@@ -207,7 +183,6 @@ exports.editUpdate = (req, res) => {
           },
         },
         (error, result) => {
-          console.log("수정완료");
           res.redirect("/page/1");
         }
       );
@@ -218,7 +193,6 @@ exports.editUpdate = (req, res) => {
         { _id: parseInt(req.body.id) },
         { $set: { 제목: req.body.title, 내용: req.body.date } },
         (error, result) => {
-          console.log("수정완료");
           res.redirect("/page/1");
         }
       );
@@ -226,19 +200,6 @@ exports.editUpdate = (req, res) => {
   }
 };
 //수정
-
-//댓글수정
-exports.commentEditUpdate = (req, res) => {
-  //서버로 부터 PUT 요청 들어오면 게시물 수청 처리
-  db.collection("post").updateOne(
-    { _id: parseInt(req.body._id) },
-    { $set: { 작성내용: req.body.date } },
-    (error, result) => {
-      console.log("수정완료");
-    }
-  );
-};
-//댓글수정
 
 //쓰기
 exports.post = (요청, 응답) => {
@@ -253,6 +214,7 @@ exports.post = (요청, 응답) => {
         _id: total_post + 1,
         제목: 요청.body.title,
         내용: 요청.body.date,
+        nickName: 요청.user.nickName,
         작성자: 요청.user._id,
         작성자ID: 요청.user.id,
         작성날짜: time.format("YYYY-MM-DD HH:mm:ss"),
@@ -264,6 +226,7 @@ exports.post = (요청, 응답) => {
         _id: total_post + 1,
         제목: 요청.body.title,
         내용: 요청.body.date,
+        nickName: 요청.user.nickName,
         작성자: 요청.user._id,
         작성자ID: 요청.user.id,
         작성날짜: time.format("YYYY-MM-DD HH:mm:ss"),
@@ -282,7 +245,7 @@ exports.post = (요청, 응답) => {
             { name: "게시물갯수" },
 
             // 오퍼레이터 연산자
-            { $inc: { totalPost: 1 } },
+            { $inc: { totalPost: 1, realPost: 1 } },
             (error, ret) => {
               if (error) {
                 return console.log("에러");
@@ -311,13 +274,12 @@ exports.comments = (req, res) => {
     var Comments = {
       id: req.body.cmdate,
       _id: total_post + 1,
+      nickName: req.user.nickName,
       작성자: req.user.id,
       작성내용: req.body.date,
       작성날짜: time.format("YYYY-MM-DD HH:mm:ss"),
     };
     db.collection("Comments").insertOne(Comments, (error, result) => {
-      console.log(result);
-
       db.collection("commentcounter").updateOne(
         { name: "댓글개수" },
 
@@ -360,8 +322,6 @@ exports.detailread = (req, res) => {
               id: parseInt(req.params.id),
               usercookie: req.cookies.user,
             });
-            console.log(ret);
-            console.log(req.params.id);
           } catch (err) {
             next(err);
           }
@@ -370,7 +330,3 @@ exports.detailread = (req, res) => {
   );
 };
 //상세글보기
-
-exports.myPageTest = (req, res) => {
-  db.collection("");
-};

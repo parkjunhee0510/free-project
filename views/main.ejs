@@ -16,30 +16,28 @@
     <div id="hader-navbar-container">
       <ul>
         <% if (!usercookie.user){ %>
-        <li><a href="/">home</a></li>
         <li><a href="/login">로그인</a></li>
         <li><a href="/signUp">회원가입</a></li>
         <% } else { %>
-        <li><a href="/">home</a></li>
         <li><a href="/mypage">내 정보</a></li>
         <li><a href="/logout" id="delete">로그아웃</a></li>
         <% } %>
       </ul>
     </div>
     <div class="header-box">
-      <h3><span>ALCOHOL</span> FREE</h3>
-      <p>test</p>
+      <a href="/">achool free</a>
+      <br /><br /><br /><br />
     </div>
-    <hr />
     <nav id="navbar">
-      <ul>
+      <ul class="navbar-link">
         <li><a class="menuLink" href="/page/1">게시판</a></li>
         <li><a class="menuLink" href="#">메뉴2</a></li>
         <li><a class="menuLink" href="#">메뉴3</a></li>
         <li><a class="menuLink" href="#">메뉴4</a></li>
       </ul>
     </nav>
-    <hr />
+    <br /><br /><br /><br />
+
     <!-- <div class="middle-menu">
     </div> -->
     <div class="banner-container">
@@ -50,25 +48,13 @@
         <div data-index="4"></div>
       </div>
     </div>
-
-    <div id="middle-banner-container">
-      <div class="middle-item-img-a">
-        <figure>
-          <a href="www.google.com"><img src="test.jpg" /></a>
-        </figure>
-      </div>
-      <div class="middle-item-img-a">
-        <figure>
-          <a href="www.google.com"><img src="test2.jpg" /></a>
-        </figure>
-      </div>
-      <div class="middle-item-img-a">
-        <figure>
-          <a href="www.google.com"><img src="test3.jpg" /></a>
-        </figure>
-      </div>
+    <div class="middle-header-box">
+      <span>마시면서 소통하는</span>
     </div>
 
-    <script src="../public/js/main.js"></script>
+    <div class="middle-content-container">
+      <div class="pit1" id="middle-content"></div>
+      <div class="pit2" id="middle-content"></div>
+    </div>
   </body>
 </html>
