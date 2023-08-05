@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 runtime: nodejs
 env: flex
 
@@ -7,3 +8,14 @@ resources:
   cpu: 1
   memory_gb: 0.5
   disk_size_gb: 10
+=======
+runtime: nodejs
+env: flex
+
+manual_scaling:
+  instances: 1
+resources:
+  cpu: 1
+  memory_gb: 0.5
+  disk_size_gb: 10
+>>>>>>> f31af125c1a7b1d72ebcc74e14826c527eb1c8cf

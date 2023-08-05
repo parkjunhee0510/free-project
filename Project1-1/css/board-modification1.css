@@ -1,0 +1,275 @@
+/* 바디 백그라운드 날릴거 */
+body {
+background-color: gray;
+}
+
+li {
+    list-style: none;
+}
+
+#hader-navbar-container {
+    width: 100%;
+    height: 20px;
+}
+
+
+/*여기서*/
+.logo-container {
+    text-align: center;
+}
+
+.logo-img {
+    max-width: 200px;
+    height: 150px;
+}
+/*여까지 삭제*/
+
+
+#hader-navbar-container ul {
+    float: right;
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+#hader-navbar-container a {
+    display: block;
+    text-align: center;
+    margin: 0.25rem;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    font-weight: bold;
+    color: yellowgreen;
+}
+
+#hader-navbar-container a:hover {
+    background: yellowgreen;
+    color: black;
+}
+
+.header-box {
+    margin-top: 30px;
+    width: 100%;
+    background-color: white;
+    border: 2px solid gray;
+    border-radius: 5px;
+    /* background-image: url(../layout.png); */
+    padding: 1px;
+    text-align: center;
+}
+
+.header-box h3 {
+    margin-top: 20px;
+    margin-bottom: -13px;
+    margin-left: 30px;
+    font-size: 40px;
+    color: rgb(63, 28, 28);
+}
+
+.header-box h3:hover{
+    cursor: pointer;
+}
+
+.header-box p {
+    margin-left: 30px;
+    font-size: 25px;
+    color: rgb(65, 54, 54);
+    font-family: "Times New Roman", Times, serif;
+    font-weight: 400px;
+}
+
+.header-box span {
+    display: inline-block;
+    width: 160px;
+    color: white;
+    background-color: black;
+    font-family: fantasy;
+}  
+
+/* form 태그 */
+
+
+form {
+    margin-top: 20px;
+    margin-left: 4%;
+    margin-right: 12%;
+    
+    
+}
+
+label {
+    display:block;
+    box-sizing: border-box;
+    color:black;
+    font-size: 20px;
+    text-align: right;
+    font-weight: bold;
+    margin-left: 4%;
+    margin-right: 8%;
+}
+/* 제목 */
+#exampleInputEmail1 {
+    margin-bottom: 30px;
+    background-size: cover;
+    color: black;
+    width: 92%;
+    height: 60px;
+    font-size: 25px;
+    font-weight: bold;
+    border-width: 2px;
+    border-radius: 10px;
+    margin-left: 10%;
+    
+}
+#exampleInputEmail1:hover{
+
+    border-color: aqua;
+}
+#exampleInputEmail1:focus{
+    color: slategray;
+}
+
+/* 이미지 */
+.revision-img{
+    margin-top: 30px;
+    width: 70%;
+    max-height: 600px;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: 0px;
+}
+
+/* 이미지 re-upload */
+.img-re-upload {
+    float: right;
+    margin-bottom: 0px;
+    border-radius: 10px;
+    background-color: white;
+    color: black;
+    margin-top: 30px;
+    margin-right: 10%;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+
+/* 내용 */
+#exampleInputPassword1 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    background-size: cover;
+    color: black;
+    width: 92%;
+    height: 160px;
+    font-size: 25px;
+    margin-left: 10%;
+    
+    border-width: 2px;
+    border-radius: 10px;
+}
+#exampleInputPassword1:hover{
+
+    border-color: aqua;
+}
+#exampleInputPassword1:focus{
+    color: slategray;
+}
+
+
+
+
+
+/* 버튼 */
+button {
+    margin-top: 1.5%;
+    float: right;
+    margin-right: 6%;
+    width: 80px;
+    height: 50px;
+    background-size: cover;
+    font-size: 20px;
+    color:crimson;
+    font-weight: bold;
+    border-radius: 50px;
+    background-color: black;
+}
+button:hover{
+    cursor: pointer;
+    background-color:darkgray;
+    border-color: black;
+    
+}
+
+.chat-input{
+    margin-top: 20px;
+    margin-bottom: 10px;
+    background-size: cover;
+    color: black;
+    width: 92%;
+    height: 160px;
+    font-size: 25px;
+    margin-left: 10%;
+    
+    border-width: 2px;
+    border-radius: 10px;
+}
+
+.chat-button {
+    color: white;
+}
+
+
+
+/* 리스트 */
+.board_list {
+    width: 93%;
+    border-top: 2px solid #000;
+    margin-left: 127px;
+    margin-top: 160px;
+    background-color: white;
+}
+
+.board_list > div {
+    border-bottom: 1px solid #ddd;
+    font-size: 0;
+}
+
+.board_list > div:last-child {
+    border-bottom: 1px solid #000;
+}
+
+.board_list > div > div {
+    display: inline-block;
+    padding: 15px 0;
+    text-align: center;
+    font-size: 1.4rem;
+}
+
+.board_list > div.top > div {
+    font-weight: 600;
+}
+
+.board_list .num {
+    width: 10%;
+}
+
+.board_list .title {
+    width: 60%;
+    text-align: left;
+    text-decoration: none;
+    
+        
+}
+
+.board_list .writer {
+    width: 10%;
+}
+
+.board_list .date {
+    width: 10%;
+}
+
+.board_list .count {
+    width: 10%;
+}
