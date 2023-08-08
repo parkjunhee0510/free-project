@@ -1,0 +1,417 @@
+body {
+  background-color: black;
+}
+
+
+
+
+li {
+  list-style: none;
+}
+
+#hader-navbar-container {
+  width: 100%;
+  height: 20px;
+}
+
+#hader-navbar-container ul {
+  float: right;
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+#hader-navbar-container a {
+  display: block;
+  text-align: center;
+  margin: 0.25rem;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  font-weight: bold;
+  color: yellowgreen;
+}
+  
+#hader-navbar-container a:hover {
+  background: yellowgreen;
+}
+  
+.header-box {
+  margin-top: 30px;
+  width: 100%;
+
+  border-radius: 5px;
+  padding: 1px;
+  text-align: center;
+  
+  background-size: cover;
+}
+
+.header-box h3 {
+  margin-top: 20px;
+  margin-bottom: -13px;
+  margin-left: 30px;
+  font-size: 50px;
+  color: #fff;
+  
+  margin-bottom: 80px;
+}
+#neon-green {
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #0fa, 0 0 70px #0fa;
+  animation: flicker2 1.5s infinite alternate;
+}
+  
+.header-box p {
+  margin-left: 30px;
+  font-size: 25px;
+  color: rgb(65, 54, 54);
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 400px;
+}
+  
+.header-box span {
+  display: inline-block;
+  
+  color: white;
+  font-family: fantasy;
+  
+}
+#neon-pink {
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 42px #f0a, 0 0 60px #f0a, 0 0 100px #f0a;
+  animation: flicker1 1.5s infinite alternate;
+}
+/* 네온 깜빡임 */
+@keyframes flicker1 {
+  0%,
+  18%,
+  22%,
+  25%,
+  53%,
+  57%,
+  100% {
+    text-shadow: 0 0 7px #fff, 0 0 42px #f0a, 0 0 60px #f0a, 0 0 100px #f0a;
+  }
+  20%,
+  24%,
+  55% {
+    text-shadow: none;
+  }
+}
+@keyframes flicker2 {
+  0%,
+  18%,
+  22%,
+  25%,
+  53%,
+  57%,
+  100% {
+    text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 42px #0fa, 0 0 60px #0fa, 0 0 100px #0fa;
+  }
+  20%,
+  25%,
+  58%,
+  55% {
+    text-shadow: 0 0 5px #fff, 0 0 8px #fff, 0 0 20px #0fa, 0 0 25px #0fa, 0 0 40px #0fa;
+  }
+}
+                    /* navbar */
+#navbar {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 55px;
+}
+  
+#navbar ul {
+  display: flex;
+  margin-left: -40px;
+  width: 100%;
+  height: 80%;
+}
+  
+#navbar ul li {
+  border-left: 1px solid rgb(5, 5, 5);
+  width: 100%;
+  line-height: 40px;
+  color: white;
+  background-color: rgba(2, 2, 0, 0.705);
+  text-align: center;
+}
+
+#navbar .menuLink {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  display: block;
+  width: 100%;
+  height: 100%;
+  font-size: 12px;
+  font-weight: bold;
+  font-family: "Trebuchet MS";
+}
+  
+#navbar ul :hover {
+  background-color: gray;
+  color: black;
+}
+  
+/* 배너 코드 */
+.banner-container {
+  width: 800px;
+  height: 800px;
+  margin-left: 100px;
+  overflow: hidden;
+  justify-content: left;
+  object-fit: cover;
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
+
+.banner {
+  width: calc(100% * 4);
+  height: 100%;
+  display: flex;
+  animation: animation1 10s infinite;
+  /* -webkit-transition: all 0.5s cubic-bezier(1, 0.01, 0.32, 1);
+  -moz-transition: all 0.5s cubic-bezier(1, 0.01, 0.32, 1);
+  -o-transition: all 0.5s cubic-bezier(1, 0.01, 0.32, 1);
+  -ms-transition: all 0.5s cubic-bezier(1, 0.01, 0.32, 1);
+  transition: all 0.5s cubic-bezier(1, 0.01, 0.32, 1); */
+}
+
+
+.banner > div {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  filter: grayscale(0) blur(0);
+  transition: 0.3s ease-in-out;
+}
+
+.banner > div:hover {
+  filter: grayscale(100%) blur(5px);
+}
+
+
+.banner > div:nth-child(1) {
+  background-image: url(../image/community.png);
+  background-color: white;
+  cursor: pointer;
+}
+.banner > div:nth-child(2) {
+  background-image: url(../image/beer.png);
+
+  cursor: pointer;
+}
+.banner > div:nth-child(3) {
+  background-image: url( ../image/test.jpg);
+  cursor: pointer;
+}
+.banner > div:nth-child(4) {
+  background-image: url( ../image/test1.gif);
+  cursor: pointer;
+}
+
+@keyframes animation1 {
+  0% {
+    margin-left: 0;
+  }
+  20% {
+    margin-left: 0;
+  }
+  25% {
+    margin-left: -100%;
+  }
+  45% {
+    margin-left: -100%;
+  }
+  50% {
+    margin-left: -200%;
+  }
+  70% {
+    margin-left: -200%;
+  }
+  75% {
+    margin-left: -300%;
+  }
+  95% {
+    margin-left: -300%;
+  }
+  100% {
+    margin-left: 0;
+  }
+}
+@keyframes animation2 {
+  0% {
+    margin-left: -100%;
+  }
+  20% {
+    margin-left: -100%;
+  }
+  25% {
+    margin-left: -200%;
+  }
+  45% {
+    margin-left: -200%;
+  }
+  50% {
+    margin-left: -300%;
+  }
+  70% {
+    margin-left: -300%;
+  }
+  75% {
+    margin-left: 0;
+  }
+  95% {
+    margin-left: 0;
+  }
+  100% {
+    margin-left: -100%;
+  }
+}
+@keyframes animation3 {
+  0% {
+    margin-left: -200%;
+  }
+  20% {
+    margin-left: -200%;
+  }
+  25% {
+    margin-left: -300%;
+  }
+  45% {
+    margin-left: -300%;
+  }
+  50% {
+    margin-left: 0;
+  }
+  70% {
+    margin-left: 0;
+  }
+  75% {
+    margin-left: -100%;
+  }
+  95% {
+    margin-left: -100%;
+  }
+  100% {
+    margin-left: -200%;
+  }
+}
+@keyframes animation4 {
+  0% {
+    margin-left: -300%;
+  }
+  20% {
+    margin-left: -300%;
+  }
+  25% {
+    margin-left: 0;
+  }
+  45% {
+    margin-left: 0;
+  }
+  50% {
+    margin-left: -100%;
+  }
+  70% {
+    margin-left: -100%;
+  }
+  75% {
+    margin-left: -200%;
+  }
+  95% {
+    margin-left: -200%;
+  }
+  100% {
+    margin-left: -300%;
+  }
+}
+
+
+/* 미들 폰트 */
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css);
+.middle-text {
+  color: white;
+  text-align: center;
+  font-size: 4em;
+  margin-bottom: 0;
+  margin-top: 30px;
+  line-height: 1;
+  text-decoration: none;
+  margin-bottom: 100px;
+  font-family: 'Nanum Gothic Coding', monospace;
+  animation: neon-orange 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes neon-orange {
+  from {
+    text-shadow: 0 0 20px #fff, 0 0 40px #fff, 0 0 60px #fff, 0 0 80px orange,
+      0 0 140px orange, 0 0 160px orange, 0 0 200px orange, 0 0 300px orange;
+  }
+  to {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px orange,
+      0 0 70px orange, 0 0 80px orange, 0 0 100px orange, 0 0 150px orange;
+  }
+}
+
+/* 미들 컨테이너 */
+
+.middle-container {
+  height: 800px;
+  
+  width: auto;
+}
+
+.middle-banner{
+  align-items: center;
+  object-fit: cover;
+  display: flex;
+  overflow: hidden;
+  justify-content: center;
+}
+
+.middle-index1{
+  float: left;
+  border-radius: 20px;
+  
+  background-image: url(../image/community1.png);
+  background-color: gray;
+  height: 650px;
+  width: 650px;
+  background-size: cover;
+  margin-right: 150px;
+  filter: grayscale(0) blur(0);
+  transition: 0.3 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.middle-index1:hover{
+filter: grayscale(50%) blur(5px);
+}
+
+.middle-index2{
+  float: right;
+  border-radius: 20px;
+  
+  background-image: url(../image/beer.png);
+  height: 650px;
+  width: 650px;
+  background-size: cover;
+  filter: grayscale(0) blur(0);
+  transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.middle-index2:hover {
+  filter: grayscale(50%) blur(5px);
+}
+.wt{
+ color:white;
+ border :solid white 5px ;
+ justify-content: center;
+ position: absolute;
+ left: 60%;
+ top: 42%;
+ height: 300px;
+ width: 30%;
+ background-color: black;
+ 
+}

@@ -1,0 +1,125 @@
+body {
+  background-image: url(Sign_up_background.png);
+}
+
+.sub_header {
+  width: 100%;
+  height: 180px;
+  border: 2px solid black;
+  border-radius: 5px;
+  background-image: url(header_img.jpg);
+}
+
+/* .logo-img {
+  margin-top: 1px;
+  margin-left: 7px;
+  max-width: 30%;
+  height: 60%;
+  display: block;
+  background-image: url(Logo.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+} */
+
+form {
+  margin-top: 4%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+  background-color:white;
+  border-radius: 5px;
+  text-align: center;
+  padding: 20px;
+}
+
+form > div {
+  color: #fa2222;
+  font-size: 40px;
+  font-weight: 600;
+  letter-spacing: -.04em;
+  padding-bottom: 15px;
+  text-align: left;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: none;
+  color: black;
+}
+
+input:hover {
+  background-color: lightgray;
+}
+
+.in {
+  margin-bottom: 15px;
+  background-color: white;
+  text-decoration-line:underline;
+}
+
+.btn {
+  background-color: none;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 30px;
+  color: white;
+  float: right;
+  position: relative;
+  top: 0;
+}
+
+.btn1 {
+  background-color: none;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 30px;
+  color: white;
+  float: right;
+  position: relative;
+  top: 0;
+}
+
+.btn:hover {
+  color: darkgray;
+}
+
+a {
+  text-align: center;
+  text-decoration: none;
+  color: rgba(15, 23, 31, 0.623);
+}
+
+a:hover {
+  color: darkgrey;
+}
+
+
+
+.btn a {
+  color: black;
+  text-decoration: none;
+}
+
+.btn1 a {
+  color: black;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background-color: burlywood;
+}
+
+.btn1:hover {
+  background-color: burlywood;
+}
+
+/* .btn:focus {
+  background-color: gray;
+} */
+
+.btn:active {
+  background-color: chocolate;
+}

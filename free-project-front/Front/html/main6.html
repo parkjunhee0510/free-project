@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/main6.css" href="../css/1.css" />
+    <script
+      src="https://kit.fontawesome.com/7395015fb5.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>main</title>
+  </head>
+  <body>
+    <div id="hader-navbar-container">
+      <ul>
+        <li><a href="login.html">로그인</a></li>
+        <li><a href="sign_up.html">회원가입</a></li>
+        <li><a href="user-info.html">내 정보</a></li>
+      </ul>
+    </div>
+    <div class="header-box">
+      <h3 id="neon-green"><span id="neon-pink">ALCOHOL</span> FREE</h3>
+      <!-- <p>FREE</p> -->
+    </div>
+    <hr/>
+    <header>
+      <nav id="navbar">
+        <ul>
+          <li><a class="menuLink" href="community.html">커뮤니티</a></li>
+          <li><a class="menuLink" href="beer-rec.html">술+안주추천</a></li>
+        </ul>
+      </nav>
+    </header>
+    <hr />
+    <!-- <div class="middle-menu">
+    </div> -->
+  
+<!-- 메인 사진 -->
+    <div class="banner-container">
+      <div class="banner">
+        <div data-index="1" onclick="window.location.href='main.html'"></div>
+        <div data-index="2" onclick="window.location.href=''"></div>
+        <div data-index="3" onclick="window.location.href='sign_up.html'"></div>
+        <div data-index="4" onclick="window.location.href='sign_up.html'"></div>
+      </div>
+      
+<!-- 날씨 -->
+<div class="wt">오늘 같은 날씨엔 이런 조합 어때요?
+  <dl>
+    <dt>기온</dt>
+    <dd id="temperature"></dd><hr>
+    <dt>위치</dt>
+    <dd id="place"></dd><hr>
+    <dt>설명</dt>
+    <dd id="description"></dd><hr>
+    <dt>아이콘</dt>
+    <i id="icon"></i>
+  </dl>
+  <button class="button" type="button">현재 날씨는?</button>
+  </div>
+  </div>
+   
+    <div class="middle-text">마시면서 소통하는</div>
+    <div class="middle-container">
+      <div class="middle-banner">
+        <a class="middle-index1" href="community.html"></a>
+        <a class="middle-index2" href="beer-rec.html"></a>
+      </div>
+    
+    
+    </div>
+      <!-- 스크립트 -->
+      <script>
+        let temperature = document.getElementById('temperature');
+        let place = document.getElementById('place');
+        let description = document.getElementById('description');
+        let icon = document.getElementById('icon');
+        
+        let data;
+
+        const button = document.querySelector('.button');
+        
+        button.addEventListener('click', () => {
+          navigator.geolocation.getCurrentPosition(success);
+        });
+        const success = (position) => {
+          const latitude = position.coords.latitude;
+          const longitude = position.coords.longitude;
+          console.log('success-position');
+          
+
+          getWeather(latitude, longitude);
+        };
+
+        const getWeather = (lat, lon) => {
+          fetch(
+            `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric&lang=kr`
+          ).then((res) => res.json())
+  .then((result) => {
+    
+    console.log(result);
+    temperature.innerText = result.main.temp;
+    place.innerText = result.name;
+    description.innerText = result.weather[0].description;
+    // icon.innerText = result.weather[0].icon;
+  });
+
+        }
+        const API_KEY = 'c42567981060250eca0448a64d21fde6';
+
+      </script>
+  
+  <!-- 스크립트에 설명 아이디에 따라서 날씨 사진 바뀌거나 글귀 넣고 빼는걸로 if id>801 => 흐림사진? 같은걸로 아니면 흐리면 => 오늘같이 흐린날에는 어떤 맥주에 어떤 안주 어때요? 라는 글귀*************************************** -->
+  
+
+
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/sidedish.css"/>
+    <title>DrinkNSnack</title>
+  </head>
+   <body style="margin: 0px;">
+        <!-- 헤더 로고 박스 -->
+    <div id="hader-navbar-container">
+        <ul>
+          <li><a href="login.html">로그인</a></li>
+          <li><a href="sing-up.html">회원가입</a></li>
+          <li><a href="user-info.html">내 정보</a></li>
+        </ul>
+    </div>
+    <div class="header-box">
+        <!-- <div class="logo-container">
+            <img src="css/test1.gif" alt="로고" class="logo-img">  //logo-container div삭제
+        </div> -->
+        <h3 onclick="window.location.href='main6.html'"><span>ALCOHOL</span> FREE</h3> 
+        <p>FREE</p>
+    </div>
+
+
+    <div class="header"><p>술 안주</p></div>
+    
+    <div class="alcohol-drinks">
+        <div class="imagebox1" onclick="first()"><img src="css/test1.gif" id="beer-image" style="cursor:pointer;"></div>
+        <div class="imagebox2" onclick="second()"><img src="css/test1.gif" id="beer-image" style="cursor:pointer;"></div>
+        <div class="imagebox3" onclick="third()"><img src="css/test.jpg" id="beer-image" style="cursor:pointer;"></div>
+        <div class="imagebox4" onclick="fourth()"><img src="css/test.avif" id="beer-image" style="cursor:pointer;"></div>
+        <div class="imagebox5" onclick="fifth()"><img src="css/test.avif" id="beer-image" style="cursor:pointer;"></div>
+    </div>
+    <!--이미지 박스 추가 시 imagebox5,6 등으로 태그. 4개 이후 다음 페이지로 -->
+
+
+    <div class="board_page">
+        <a href="#" class="bt first"><<</a>
+        <a href="#" class="bt prev"><</a>
+        <a href="#" class="num on">1</a>
+        <a href="#" class="num">2</a>
+        <a href="#" class="num">3</a>
+        <a href="#" class="num">4</a>
+        <a href="#" class="num">5</a>
+        <a href="#" class="bt next">></a>
+        <a href="#" class="bt last">>></a>
+    </div>
+    <div class="footer">
+        
+    </div>
+
+<script src="js/side.js"></script>
+   </body>
+ </html>
