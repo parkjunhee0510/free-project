@@ -1,0 +1,35 @@
+#heder-box {
+  width: 100%;
+  height: 100px;
+  text-align: center;
+  font-size: 15px;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+#box {
+  width: 30%;
+  height: 400px;
+  float: left;
+  background-color: aqua;
+}
+
+#right-box {
+  width: 70%;
+  height: 400px;
+  float: left;
+  background-color: bisque;
+}
+
+#bottom-box {
+  width: 100%;
+  height: 400px;
+  float: left;
+  background-color: rgb(36, 26, 15);
+}
+
+footer div {
+  width: 100%;
+  height: 50px;
+  background-color: darkblue;
+}
