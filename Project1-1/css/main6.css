@@ -39,11 +39,11 @@ li {
 .header-box {
   margin-top: 30px;
   width: 100%;
-  border: 2px solid white;
+
   border-radius: 5px;
   padding: 1px;
   text-align: center;
-  background-image: url(bricks1.png);
+  
   background-size: cover;
 }
 
@@ -53,9 +53,12 @@ li {
   margin-left: 30px;
   font-size: 50px;
   color: #fff;
+  
+  margin-bottom: 80px;
+}
+#neon-green {
   text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #0fa, 0 0 70px #0fa;
   animation: flicker2 1.5s infinite alternate;
-  margin-bottom: 80px;
 }
   
 .header-box p {
@@ -68,9 +71,13 @@ li {
   
 .header-box span {
   display: inline-block;
-  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 42px #f0a, 0 0 60px #f0a, 0 0 100px #f0a;
+  
   color: white;
   font-family: fantasy;
+  
+}
+#neon-pink {
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 42px #f0a, 0 0 60px #f0a, 0 0 100px #f0a;
   animation: flicker1 1.5s infinite alternate;
 }
 /* 네온 깜빡임 */
@@ -149,14 +156,14 @@ li {
   
 /* 배너 코드 */
 .banner-container {
-  width: 1000px;
-  height: 1000px;
-  margin: 0 auto;
+  width: 800px;
+  height: 800px;
+  margin-left: 80px;
   overflow: hidden;
-  justify-content: center;
+  justify-content: left;
   object-fit: cover;
   margin-top: 100px;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
 }
 .banner {
   width: calc(100% * 4);
@@ -179,7 +186,7 @@ li {
   transition: 0.3s ease-in-out;
 }
 .banner > div:hover {
-  filter: grayscale(100%) blur(3px);
+  filter: grayscale(100%) blur(5px);
 }
 
 
@@ -188,176 +195,213 @@ li {
   background-color: white;
   cursor: pointer;
 }
-  .banner > div:nth-child(2) {
-    background-image: url(beer.png);
-    
-    cursor: pointer;
-  }
-  .banner > div:nth-child(3) {
-    background-image: url( test.jpg);
-    cursor: pointer;
-  }
-  .banner > div:nth-child(4) {
-    background-image: url( test1.gif);
-    cursor: pointer;
-  }
+.banner > div:nth-child(2) {
+  background-image: url(beer.png);
   
-  @keyframes animation1 {
-    0% {
-      margin-left: 0;
-    }
-    20% {
-      margin-left: 0;
-    }
-    25% {
-      margin-left: -100%;
-    }
-    45% {
-      margin-left: -100%;
-    }
-    50% {
-      margin-left: -200%;
-    }
-    70% {
-      margin-left: -200%;
-    }
-    75% {
-      margin-left: -300%;
-    }
-    95% {
-      margin-left: -300%;
-    }
-    100% {
-      margin-left: 0;
-    }
+  cursor: pointer;
+}
+.banner > div:nth-child(3) {
+  background-image: url( test.jpg);
+  cursor: pointer;
+}
+.banner > div:nth-child(4) {
+  background-image: url( test1.gif);
+  cursor: pointer;
+}
+
+@keyframes animation1 {
+  0% {
+    margin-left: 0;
   }
-  @keyframes animation2 {
-    0% {
-      margin-left: -100%;
-    }
-    20% {
-      margin-left: -100%;
-    }
-    25% {
-      margin-left: -200%;
-    }
-    45% {
-      margin-left: -200%;
-    }
-    50% {
-      margin-left: -300%;
-    }
-    70% {
-      margin-left: -300%;
-    }
-    75% {
-      margin-left: 0;
-    }
-    95% {
-      margin-left: 0;
-    }
-    100% {
-      margin-left: -100%;
-    }
+  20% {
+    margin-left: 0;
   }
-  @keyframes animation3 {
-    0% {
-      margin-left: -200%;
-    }
-    20% {
-      margin-left: -200%;
-    }
-    25% {
-      margin-left: -300%;
-    }
-    45% {
-      margin-left: -300%;
-    }
-    50% {
-      margin-left: 0;
-    }
-    70% {
-      margin-left: 0;
-    }
-    75% {
-      margin-left: -100%;
-    }
-    95% {
-      margin-left: -100%;
-    }
-    100% {
-      margin-left: -200%;
-    }
+  25% {
+    margin-left: -100%;
   }
-  @keyframes animation4 {
-    0% {
-      margin-left: -300%;
-    }
-    20% {
-      margin-left: -300%;
-    }
-    25% {
-      margin-left: 0;
-    }
-    45% {
-      margin-left: 0;
-    }
-    50% {
-      margin-left: -100%;
-    }
-    70% {
-      margin-left: -100%;
-    }
-    75% {
-      margin-left: -200%;
-    }
-    95% {
-      margin-left: -200%;
-    }
-    100% {
-      margin-left: -300%;
-    }
+  45% {
+    margin-left: -100%;
   }
+  50% {
+    margin-left: -200%;
+  }
+  70% {
+    margin-left: -200%;
+  }
+  75% {
+    margin-left: -300%;
+  }
+  95% {
+    margin-left: -300%;
+  }
+  100% {
+    margin-left: 0;
+  }
+}
+@keyframes animation2 {
+  0% {
+    margin-left: -100%;
+  }
+  20% {
+    margin-left: -100%;
+  }
+  25% {
+    margin-left: -200%;
+  }
+  45% {
+    margin-left: -200%;
+  }
+  50% {
+    margin-left: -300%;
+  }
+  70% {
+    margin-left: -300%;
+  }
+  75% {
+    margin-left: 0;
+  }
+  95% {
+    margin-left: 0;
+  }
+  100% {
+    margin-left: -100%;
+  }
+}
+@keyframes animation3 {
+  0% {
+    margin-left: -200%;
+  }
+  20% {
+    margin-left: -200%;
+  }
+  25% {
+    margin-left: -300%;
+  }
+  45% {
+    margin-left: -300%;
+  }
+  50% {
+    margin-left: 0;
+  }
+  70% {
+    margin-left: 0;
+  }
+  75% {
+    margin-left: -100%;
+  }
+  95% {
+    margin-left: -100%;
+  }
+  100% {
+    margin-left: -200%;
+  }
+}
+@keyframes animation4 {
+  0% {
+    margin-left: -300%;
+  }
+  20% {
+    margin-left: -300%;
+  }
+  25% {
+    margin-left: 0;
+  }
+  45% {
+    margin-left: 0;
+  }
+  50% {
+    margin-left: -100%;
+  }
+  70% {
+    margin-left: -100%;
+  }
+  75% {
+    margin-left: -200%;
+  }
+  95% {
+    margin-left: -200%;
+  }
+  100% {
+    margin-left: -300%;
+  }
+}
+
+
+/* 미들 폰트 */
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css);
+.middle-text {
+  color: white;
+  text-align: center;
+  font-size: 4em;
+  margin-bottom: 0;
+  margin-top: 30px;
+  line-height: 1;
+  text-decoration: none;
+  margin-bottom: 100px;
+  font-family: 'Nanum Gothic Coding', monospace;
+  animation: neon-orange 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes neon-orange {
+  from {
+    text-shadow: 0 0 20px #fff, 0 0 40px #fff, 0 0 60px #fff, 0 0 80px orange,
+      0 0 140px orange, 0 0 160px orange, 0 0 200px orange, 0 0 300px orange;
+  }
+  to {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px orange,
+      0 0 70px orange, 0 0 80px orange, 0 0 100px orange, 0 0 150px orange;
+  }
+}
+
+/* 미들 컨테이너 */
+
+.middle-container {
+  height: 800px;
   
-  /* 배너 코드 */
+  width: auto;
+}
+
+.middle-banner{
+  align-items: center;
+  object-fit: cover;
+  display: flex;
+  overflow: hidden;
+  justify-content: center;
+}
+
+.middle-index1{
+  float: left;
+  border-radius: 20px;
   
-  /* 중간 배너 */
-/*   
-  #middle-banner-container {
-    width: 1400;
-    height: 4000px;
-    background-color: white;
-    object-fit: cover;
-  }
+  background-image: url(community1.png);
+  background-color: gray;
+  height: 650px;
+  width: 650px;
+  background-size: cover;
+  margin-right: 150px;
+  filter: grayscale(0) blur(0);
+  transition: 0.3 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.middle-index1:hover{
+filter: grayscale(50%) blur(5px);
+}
+
+.middle-index2{
+  float: right;
+  border-radius: 20px;
   
-  .middle-item-container-right {
-    width: 50%;
-    height: 2000px;
-    background-color: #a9c6d9;
-    float: right;
-  }
-  
-  figure {
-    width: 100%;
-    height: 2000px;
-    margin: 0;
-    padding: 0;
-    background: darkcyan;
-    overflow: hidden;
-    object-fit: cover;
-  }
-  
-  .middle-item-img-a figure img {
-    object-fit: cover;
-    width: 100%;
-    filter: grayscale(0) blur(0);
-    filter: grayscale(0) blur(0);
-    transition: 0.3s ease-in-out;
-    transition: 0.3s ease-in-out;
-  }
-  .middle-item-img-a figure:hover img {
-    filter: grayscale(100%) blur(3px);
-    filter: grayscale(100%) blur(3px);
-  }
-   */
-  /* 중간 배너 */
+  background-image: url(beer.png);
+  height: 650px;
+  width: 650px;
+  background-size: cover;
+  filter: grayscale(0) blur(0);
+  transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.middle-index2:hover {
+  filter: grayscale(50%) blur(5px);
+}
+.wt{
+ color:white;
+ border :solid white 5px ;
+}
