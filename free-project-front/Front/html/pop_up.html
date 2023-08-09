@@ -2,61 +2,53 @@
 <html>
 <head>
   <title>탭 내 팝업</title>
+  <link rel="stylesheet" href="../css/pop_up.css">
   
 </head>
 <body>
-    <style>.popup-container {
-        display: none;
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background-color: #ffffff;
-        padding: 20px;
-        border: 1px solid #cccccc;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        z-index: 9999;
-      }
-      
-      .popup-content {
-        text-align: center;
-      }
-      
-      .popup-content h2 {
-        margin-bottom: 10px;
-      }
-      
-      #openPopupBtn {
-        margin-top: 20px;
-        cursor: pointer;
-      }
-      
-      #closePopupBtn {
-        margin-top: 20px;
-        cursor: pointer;
-      }
-      </style>
+    
     <button id="openPopupBtn">팝업 열기</button>
   <div class="popup-container" id="popupContainer">
     <div class="popup-content">
-      <h2>팝업 내용</h2>
-      <p>이곳에 팝업 내용을 입력합니다.</p>
-      <button id="closePopupBtn">닫기</button>
+        <div class="beerimg">
+          <img src="../image/beer.png" alt="">
+          <div class="textbox">
+            <h2>맥주 이름</h2>
+            <p>삶이 그대를 속일지라도<br>
+
+              ㅡ푸슈킨ㅡ<br>
+              
+               
+              
+              삶이 그대를 속일지라도<br>
+              
+              슬퍼하거나 노여워하지 말라.<br>
+              
+              슬픈 날엔 참고 견디라.<br>
+              
+              즐거운 날은 오고야 말리니.<br>
+              
+              마음은 미래를 바라느니<br>
+              
+              현재는 한없이 우울한 것<br>
+              
+              모든 것 하염없이 사라지나<br>
+              
+              지나가 버린 것 그리움이 되리니.</p>
+          </div>        
+        </div>
+        
+        <div class="sideimg">
+          <img src="../image/cass.jpg">
+          <img src="../image/global1.jpg">
+          <img src="../image/kor.png">
+
+        <button id="closePopupBtn">닫기</button>
+      </div>
     </div>
   </div>
-  <script>
-    const openPopupBtn = document.getElementById('openPopupBtn');
-const closePopupBtn = document.getElementById('closePopupBtn');
-const popupContainer = document.getElementById('popupContainer');
 
-openPopupBtn.addEventListener('click', function() {
-  popupContainer.style.display = 'block';
-});
+  <script src="../js/pop_up.js"></script>
 
-closePopupBtn.addEventListener('click', function() {
-  popupContainer.style.display = 'none';
-});
-
-  </script>
 </body>
 </html>
