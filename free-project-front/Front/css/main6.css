@@ -1,19 +1,13 @@
 body {
   background-color: black;
 }
-
-
-
-
 li {
   list-style: none;
 }
-
 #hader-navbar-container {
   width: 100%;
   height: 20px;
 }
-
 #hader-navbar-container ul {
   float: right;
   list-style: none;
@@ -21,7 +15,6 @@ li {
   margin: 0;
   padding: 0;
 }
-
 #hader-navbar-container a {
   display: block;
   text-align: center;
@@ -31,36 +24,29 @@ li {
   font-weight: bold;
   color: yellowgreen;
 }
-  
 #hader-navbar-container a:hover {
   background: yellowgreen;
 }
-  
 .header-box {
   margin-top: 30px;
   width: 100%;
-
   border-radius: 5px;
   padding: 1px;
   text-align: center;
-  
   background-size: cover;
 }
-
 .header-box h3 {
   margin-top: 20px;
   margin-bottom: -13px;
   margin-left: 30px;
   font-size: 50px;
   color: #fff;
-  
   margin-bottom: 80px;
 }
 #neon-green {
   text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #0fa, 0 0 70px #0fa;
   animation: flicker2 1.5s infinite alternate;
 }
-  
 .header-box p {
   margin-left: 30px;
   font-size: 25px;
@@ -68,13 +54,10 @@ li {
   font-family: "Times New Roman", Times, serif;
   font-weight: 400px;
 }
-  
 .header-box span {
   display: inline-block;
-  
   color: white;
   font-family: fantasy;
-  
 }
 #neon-pink {
   text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 42px #f0a, 0 0 60px #f0a, 0 0 100px #f0a;
@@ -114,21 +97,19 @@ li {
     text-shadow: 0 0 5px #fff, 0 0 8px #fff, 0 0 20px #0fa, 0 0 25px #0fa, 0 0 40px #0fa;
   }
 }
-                    /* navbar */
+/* navbar */
 #navbar {
   display: flex;
   align-items: center;
   width: 100%;
   height: 55px;
 }
-  
 #navbar ul {
   display: flex;
   margin-left: -40px;
   width: 100%;
   height: 80%;
 }
-  
 #navbar ul li {
   border-left: 1px solid rgb(5, 5, 5);
   width: 100%;
@@ -137,7 +118,6 @@ li {
   background-color: rgba(2, 2, 0, 0.705);
   text-align: center;
 }
-
 #navbar .menuLink {
   text-decoration: none;
   color: rgb(255, 255, 255);
@@ -148,12 +128,10 @@ li {
   font-weight: bold;
   font-family: "Trebuchet MS";
 }
-  
 #navbar ul :hover {
   background-color: gray;
   color: black;
 }
-  
 /* 배너 코드 */
 .banner-container {
   width: 800px;
@@ -164,20 +142,55 @@ li {
   object-fit: cover;
   margin-top: 100px;
   margin-bottom: 50px;
+  display: inline-block;
 }
+
+/* 날씨박스 */
+.wt{
+  color:white;
+  border :solid white 1px ;
+  justify-content: center;
+  position: absolute;
+  left: 57%;
+  top: 37%;
+  height: 800px;
+  width: 700px;
+  background-color: black;
+  font-size: 25px;
+  font-family: 'Nanum Gothic Coding', monospace;
+  animation: neon-orange-gr 3s ease-in-out infinite alternate;
+ }
+ @keyframes neon-orange-gr {
+  from {
+    text-shadow: 0 0 20px #fff, 0 0 40px #fff, 0 0 60px #fff, 0 0 40px orange,
+      0 0 70px orange, 0 0 80px orange, 0 0 100px orange, 0 0 150px orange;
+  }
+  to {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px greenyellow,
+      0 0 70px greenyellow, 0 0 80px greenyellow, 0 0 100px greenyellow, 0 0 150px greenyellow;
+  }
+}
+
+#rec-img {
+  border: solid 1px white;
+  height: 548px;
+  width: 700px;
+  size: cover;
+  margin-bottom: 0px;
+  overflow: hidden;
+  
+}
+
+
+
+ 
 
 .banner {
   width: calc(100% * 4);
   height: 100%;
   display: flex;
   animation: animation1 10s infinite;
-  /* -webkit-transition: all 0.5s cubic-bezier(1, 0.01, 0.32, 1);
-  -moz-transition: all 0.5s cubic-bezier(1, 0.01, 0.32, 1);
-  -o-transition: all 0.5s cubic-bezier(1, 0.01, 0.32, 1);
-  -ms-transition: all 0.5s cubic-bezier(1, 0.01, 0.32, 1);
-  transition: all 0.5s cubic-bezier(1, 0.01, 0.32, 1); */
 }
-
 
 .banner > div {
   width: 100%;
@@ -210,7 +223,6 @@ li {
   background-image: url( ../image/test1.gif);
   cursor: pointer;
 }
-
 @keyframes animation1 {
   0% {
     margin-left: 0;
@@ -376,7 +388,7 @@ li {
   border-radius: 20px;
   
   background-image: url(../image/community1.png);
-  background-color: gray;
+  background-color: white;
   height: 650px;
   width: 650px;
   background-size: cover;
@@ -402,16 +414,4 @@ filter: grayscale(50%) blur(5px);
 
 .middle-index2:hover {
   filter: grayscale(50%) blur(5px);
-}
-.wt{
- color:white;
- border :solid white 5px ;
- justify-content: center;
- position: absolute;
- left: 60%;
- top: 42%;
- height: 300px;
- width: 30%;
- background-color: black;
- 
 }
