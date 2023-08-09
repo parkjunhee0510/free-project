@@ -1,0 +1,59 @@
+.popup-container {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    padding: 20px;
+    border: 1px solid #cccccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+    width: 80%;
+    height: 800px;
+  }
+  
+  .popup-content {
+    text-align:left;
+  }
+  
+  .popup-content h2 {
+    font-size: 25px;
+    font-weight: bold;
+  }
+  
+  #openPopupBtn {
+    margin-top: 20px;
+    cursor: pointer;
+  }
+  
+ 
+  .beerimg {
+    display: flex;
+    object-fit: cover;
+    width: 100%;
+    height: 500px;
+    float: flex;
+    text-align: center;
+  }
+  .textbox {
+    width: 550px;
+    
+   
+  }
+  .sideimg img {
+    margin-top: 30px;
+    width: 340px;
+    height: 200px;
+    /* object-fit: contain; */
+    background-size: cover;
+    position: relative;
+    background-color: blue;
+  }
+  
+  #closePopupBtn {
+    top: 95%;
+    left: 95%;
+    cursor: pointer;
+    position: absolute;
+  }
