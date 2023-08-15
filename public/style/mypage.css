@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 body {
   background-image: url("../images/background.jpg");
   background-size: 100% 100%;
@@ -205,11 +204,3 @@ a {
   text-decoration: none;
   color: rgba(140, 140, 140, 1);
 }
-=======
-.myborder {
-  width: 80%;
-  height: 500px;
-  background-color: aquamarine;
-  border: 1px solid black;
-}
->>>>>>> f31af125c1a7b1d72ebcc74e14826c527eb1c8cf

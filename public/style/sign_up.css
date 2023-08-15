@@ -1,7 +1,7 @@
-<<<<<<< HEAD
 body {
   background-image: url(Sign_up_background.png);
   position: relative;
+  background-color: black;
 }
 li {
   list-style: none;
@@ -49,7 +49,7 @@ li {
 .header-box {
   margin-top: 30px;
   width: 100%;
-  background-color: white;
+  background-color: black;
   border: 2px solid gray;
   border-radius: 5px;
   /* background-image: url(../layout.png); */
@@ -62,7 +62,8 @@ li {
   margin-bottom: -13px;
   margin-left: 30px;
   font-size: 40px;
-  color: rgb(63, 28, 28);
+  color: white;
+  background-color: black;
 }
 
 .header-box h3:hover {
@@ -148,154 +149,164 @@ a:hover {
 #login_submit {
   display: none;
 }
-=======
-body {
-  background-image: url(Sign_up_background.png);
-  position: relative;
+@keyframes animation1 {
+  0% {
+    margin-left: 0;
+  }
+  20% {
+    margin-left: 0;
+  }
+  25% {
+    margin-left: -100%;
+  }
+  45% {
+    margin-left: -100%;
+  }
+  50% {
+    margin-left: -200%;
+  }
+  70% {
+    margin-left: -200%;
+  }
+  75% {
+    margin-left: -300%;
+  }
+  95% {
+    margin-left: -300%;
+  }
+  100% {
+    margin-left: 0;
+  }
 }
-li {
-  list-style: none;
+@keyframes animation2 {
+  0% {
+    margin-left: -100%;
+  }
+  20% {
+    margin-left: -100%;
+  }
+  25% {
+    margin-left: -200%;
+  }
+  45% {
+    margin-left: -200%;
+  }
+  50% {
+    margin-left: -300%;
+  }
+  70% {
+    margin-left: -300%;
+  }
+  75% {
+    margin-left: 0;
+  }
+  95% {
+    margin-left: 0;
+  }
+  100% {
+    margin-left: -100%;
+  }
 }
-
-#hader-navbar-container {
-  width: 100%;
-  height: 20px;
+@keyframes animation3 {
+  0% {
+    margin-left: -200%;
+  }
+  20% {
+    margin-left: -200%;
+  }
+  25% {
+    margin-left: -300%;
+  }
+  45% {
+    margin-left: -300%;
+  }
+  50% {
+    margin-left: 0;
+  }
+  70% {
+    margin-left: 0;
+  }
+  75% {
+    margin-left: -100%;
+  }
+  95% {
+    margin-left: -100%;
+  }
+  100% {
+    margin-left: -200%;
+  }
 }
-
-/*여기서*/
-.logo-container {
-  text-align: center;
-}
-
-.logo-img {
-  max-width: 200px;
-  height: 150px;
-}
-/*여까지 삭제*/
-
-#hader-navbar-container ul {
-  float: right;
-  list-style: none;
-  display: flex;
-  margin: 0;
-  padding: 0;
-}
-
-#hader-navbar-container a {
-  display: block;
-  text-align: center;
-  margin: 0.25rem;
-  padding: 0.5rem 1rem;
-  text-decoration: none;
-  font-weight: bold;
-  color: yellowgreen;
-}
-
-#hader-navbar-container a:hover {
-  background: yellowgreen;
-  color: black;
-}
-
-.header-box {
-  margin-top: 30px;
-  width: 100%;
-  background-color: white;
-  border: 2px solid gray;
-  border-radius: 5px;
-  /* background-image: url(../layout.png); */
-  padding: 1px;
-  text-align: center;
-}
-
-.header-box h3 {
-  margin-top: 20px;
-  margin-bottom: -13px;
-  margin-left: 30px;
-  font-size: 40px;
-  color: rgb(63, 28, 28);
-}
-
-.header-box h3:hover {
-  cursor: pointer;
-}
-
-.header-box p {
-  margin-left: 30px;
-  font-size: 25px;
-  color: rgb(65, 54, 54);
-  font-family: "Times New Roman", Times, serif;
-  font-weight: 400px;
-}
-
-.header-box span {
-  display: inline-block;
-  width: 160px;
-  color: white;
-  background-color: black;
-  font-family: fantasy;
-}
-
-form {
-  margin-top: 4%;
-  margin-left: auto;
-  margin-right: auto;
-  width: 30%;
-  background-color: white;
-  border-radius: 5px;
-  text-align: center;
-  padding: 20px;
-}
-
-form > div {
-  color: #fa2222;
-  font-size: 40px;
-  font-weight: 600;
-  letter-spacing: -0.04em;
-  padding-bottom: 15px;
-  text-align: left;
-}
-
-input {
-  width: 100%;
-  padding: 10px;
-  box-sizing: border-box;
-  border-radius: 5px;
-  border: none;
-  color: black;
-}
-
-input:hover {
-  background-color: lightgray;
+@keyframes animation4 {
+  0% {
+    margin-left: -300%;
+  }
+  20% {
+    margin-left: -300%;
+  }
+  25% {
+    margin-left: 0;
+  }
+  45% {
+    margin-left: 0;
+  }
+  50% {
+    margin-left: -100%;
+  }
+  70% {
+    margin-left: -100%;
+  }
+  75% {
+    margin-left: -200%;
+  }
+  95% {
+    margin-left: -200%;
+  }
+  100% {
+    margin-left: -300%;
+  }
 }
 
-.in {
-  margin-bottom: 15px;
-  background-color: white;
-  text-decoration-line: underline;
+@keyframes flicker1 {
+  0%,
+  18%,
+  22%,
+  25%,
+  53%,
+  57%,
+  100% {
+    text-shadow: 0 0 7px #fff, 0 0 42px #f0a, 0 0 60px #f0a, 0 0 100px #f0a;
+  }
+  20%,
+  24%,
+  55% {
+    text-shadow: none;
+  }
+}
+@keyframes flicker2 {
+  0%,
+  18%,
+  22%,
+  25%,
+  53%,
+  57%,
+  100% {
+    text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 42px #0fa, 0 0 60px #0fa, 0 0 100px #0fa;
+  }
+  20%,
+  25%,
+  58%,
+  55% {
+    text-shadow: 0 0 5px #fff, 0 0 8px #fff, 0 0 20px #0fa, 0 0 25px #0fa, 0 0 40px #0fa;
+  }
 }
 
-a {
-  text-align: center;
-  text-decoration: none;
-  color: red;
+#neon-green {
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #0fa, 0 0 70px #0fa;
+  animation: flicker2 1.5s infinite alternate;
 }
 
-a:hover {
-  color: coral;
-}
 
-#btn {
-  background-color: lightcoral;
+#neon-pink {
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 42px #f0a, 0 0 60px #f0a, 0 0 100px #f0a;
+  animation: flicker1 1.5s infinite alternate;
 }
-#btn:hover {
-  background-color: coral;
-}
-
-.sign-btn {
-  display: none;
-}
-
-#login_submit {
-  display: none;
-}
->>>>>>> f31af125c1a7b1d72ebcc74e14826c527eb1c8cf

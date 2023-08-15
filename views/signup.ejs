@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="ko">
   <head>
@@ -17,13 +16,11 @@
     </div>
     <div class="header-box">
       <div class="logo-container">
-        <img src="css/test1.gif" alt="로고" class="logo-img" />
-        <!--logo-container div삭제-->
+        
       </div>
-      <h3 onclick="window.location.href='main6.html'">
-        <span>ALCOHOL</span> FREE
+      <h3 id="neon-green" onclick="window.location.href='main6.html'"><span id="neon-pink">ALCOHOL</span> FREE</h3>
       </h3>
-      <p>FREE</p>
+      <p></p>
     </div>
 
     <div>
@@ -83,88 +80,3 @@
     <script src="/public/js/signup.js"></script>
   </body>
 </html>
-=======
-<!DOCTYPE html>
-<html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="/style/sign_up.css" />
-  </head>
-  <body style="margin: 0px">
-    <div id="hader-navbar-container">
-      <ul>
-        <li><a href="login.html">로그인</a></li>
-        <li><a href="sing-up.html">회원가입</a></li>
-        <li><a href="user-info.html">내 정보</a></li>
-      </ul>
-    </div>
-    <div class="header-box">
-      <div class="logo-container">
-        <img src="css/test1.gif" alt="로고" class="logo-img" />
-        <!--logo-container div삭제-->
-      </div>
-      <h3 onclick="window.location.href='main6.html'">
-        <span>ALCOHOL</span> FREE
-      </h3>
-      <p>FREE</p>
-    </div>
-
-    <div>
-      <form action="/mail" method="POST">
-        <input
-          type="email"
-          name="email"
-          id="UserEmail"
-          placeholder="이메일을 입력해주세요"
-        />
-        <button>확인</button>
-      </form>
-      <form action="/register" method="POST" id="login_form">
-        <div>AF 회원가입</div>
-        <input type="text" placeholder="이름" class="in" name="name" />
-        <input
-          type="text"
-          placeholder="8자 ~ 15로 영어및 숫자를 섞어 입력해주세요"
-          id="userID"
-          class="in"
-          name="id"
-        />
-        <button type="button" class="id-overhelp-button" onclick="checkId()">
-          ID 중복검사
-        </button>
-        <input
-          type="password"
-          placeholder="비밀번호"
-          id="userPW1"
-          class="in"
-          name="pw"
-        />
-        <input
-          type="password"
-          placeholder="비밀번호를 한번 더 입력해 주세요"
-          class="in"
-          id="userPW2"
-          name="pw2"
-        />
-        <button
-          type="button"
-          class="pw-overhelp-button"
-          id="login_submit"
-          onclick="checkPw()"
-        >
-          비밀번호 중복검사
-        </button>
-        <button type="submit" class="sign-btn" id="btn" value="확인">
-          확인
-        </button>
-      </form>
-    </div>
-
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-
-    <script src="/public/js/signup.js"></script>
-  </body>
-</html>
->>>>>>> f31af125c1a7b1d72ebcc74e14826c527eb1c8cf

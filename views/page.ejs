@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="ko">
   <head>
@@ -22,20 +21,20 @@
       </ul>
     </div>
     <div class="header-box">
-      <a href="/">achool free</a>
+      <h3 id="neon-green"><span id="neon-pink">ALCOHOL</span> FREE</h3>
       <br /><br /><br /><br />
     </div>
     <nav id="navbar">
       <ul class="navbar-link">
         <li><a class="menuLink" href="/page/1">게시판</a></li>
-        <li><a class="menuLink" href="#">메뉴2</a></li>
+        <li><a class="menuLink" href="/drinktest/1">술추천</a></li>
         <li><a class="menuLink" href="#">메뉴3</a></li>
         <li><a class="menuLink" href="#">메뉴4</a></li>
       </ul>
     </nav>
     <br /><br /><br /><br />
 
-    <h4 class="m1-2 my-3">게시판</h4>
+    <!-- <h4 class="m1-2 my-3">게시판</h4> -->
     <div class="input-box">
       <div class="container input-group mb-2">
         <input class="form-control" id="search-input" />
@@ -113,119 +112,3 @@
     <script src="/public/js/list.js"></script>
   </body>
 </html>
-=======
-<!DOCTYPE html>
-<html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" type="text/css" href="/style/list.css" />
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-  </head>
-  <body>
-    <div id="hader-navbar-container">
-      <ul>
-        <li><a href="/">home</a></li>
-        <li><a href="/mypage">내 정보</a></li>
-      </ul>
-    </div>
-    <div class="header-box">
-      <h3><span>ALCOHOL</span> FREE</h3>
-      <p></p>
-      <p>test</p>
-    </div>
-    <hr />
-    <nav id="navbar">
-      <ul>
-        <li><a class="menuLink" href="/page/1">게시판</a></li>
-        <li><a class="menuLink" href="#">메뉴2</a></li>
-        <li><a class="menuLink" href="#">메뉴3</a></li>
-        <li><a class="menuLink" href="#">메뉴4</a></li>
-      </ul>
-    </nav>
-    <hr />
-
-    <h4 class="m1-2 my-3">게시판</h4>
-    <div class="container input-group mb-2">
-      <input class="form-control" id="search-input" />
-      <button class="input-group-append btn btn-danger" id="search">
-        검색
-      </button>
-      <button type="button" class="btn btn-dark" onclick="moveWrite()">
-        글쓰기
-      </button>
-    </div>
-    <ul class="list-group">
-      <% for (var i = 0; i < posts.length; i++){ %>
-      <li class="list-group-item">
-        <div class="listBox">
-          <div>
-            <form
-              action="/detail"
-              method="POST"
-              data-id="posts[i]._id"
-              class="listId"
-            >
-              <h4>
-                <a href="/detail/<%= posts[i]._id%>"><%= posts[i].제목 %></a>
-              </h4>
-            </form>
-          </div>
-          <div>
-            <p>작성자 <%= posts[i].작성자ID %></p>
-            <p>작성날짜 <%= posts[i].작성날짜 %></p>
-          </div>
-        </div>
-        <!-- 작성자 ID와 로그인 쿠키 비교 -->
-        <% if(posts[i].작성자ID == usercookie) { %>
-        <button
-          class="delete btn btn-danger"
-          id="test1"
-          data-id="<%= posts[i]._id%>"
-          onclick="reload()"
-        >
-          삭제
-        </button>
-        <button id="test1" class="edit btn btn-danger">
-          <a href="/edit/<%= posts[i]._id%>">수정</a>
-        </button>
-        <% } %>
-      </li>
-      <% } %>
-    </ul>
-
-    <form action="apitest" method="POST" name="page" class="pageListBox">
-      <div class="pagination">
-        <nav aria-label="Page navigation example">
-          <ul class="pagination">
-            <li class="page-item">
-              <a class="page-link" href="#" aria-label="Previous">
-                <span aria-hidden="true">&laquo;</span>
-              </a>
-            </li>
-            <% for(let i = 1; i < (totalPost / 5) + 1; i++) { %>
-            <li class="page-item">
-              <a class="page-link" href="/page/<%= i %>"><%= i %></a>
-            </li>
-            <% } %>
-            <li class="page-item">
-              <a class="page-link" href="#" aria-label="Next">
-                <span aria-hidden="true">&raquo;</span>
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </form>
-    <p>전체게시물개수 <%= totalPost %></p>
-    <script src="/public/js/list.js"></script>
-  </body>
-</html>
->>>>>>> f31af125c1a7b1d72ebcc74e14826c527eb1c8cf
