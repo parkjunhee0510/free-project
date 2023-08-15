@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="/style/myList.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <body style="margin: 0px">
+      <div id="hader-navbar-container">
+        
+      </div>
+      <div class="header-box">
+        <a href="/"><h3 id="neon-green"><span id="neon-pink">ALCOHOL</span> FREE</h3></a>
+
+       <br><br><br><br>
+      </div>
+      <nav id="navbar">
+        <ul class="navbar-link">
+          <li><a class="menuLink" href="/page/1">게시판</a></li>
+          <li><a class="menuLink" href="#">메뉴2</a></li>
+          <li><a class="menuLink" href="#">메뉴3</a></li>
+          <li><a class="menuLink" href="#">메뉴4</a></li>
+        </ul>
+      </nav>
+      <br><br><br><br>
+
+    <div class="postList-container">
+      <div class="postList-header">
+        <p>내가 작성 한 글 : <%= posts.length%><br><span>(글 클릭시 해당 글로 이동)</span></p>
+      </div>
+      <ul>
+        <% for (var i = 0; i < posts.length; i++){ %>
+        <div class="postList">
+          <li>
+            <span> <%= i + 1 %> .   </span>
+            <a href="/detail/<%= posts[i]._id%>"><%= posts[i].제목 %></a>
+          </li>
+        </div>
+
+        <% } %>
+        <div class="postListPaging">
+          <% for(let i = 1; i < (totalPost / 15) + 1; i++) { %>
+          <li class="page-item">
+            <a class="page-link" href="/MyPostList/<%= i %>"><%= i %></a>
+          </li>
+          <% } %>
+        </div>
+      </ul>
+    </div>
+    
+  </body>
+</html>
